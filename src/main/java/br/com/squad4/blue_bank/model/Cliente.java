@@ -22,7 +22,6 @@ public class Cliente {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
     private List<Telefone> telefone = new ArrayList<>();
 
-    @Column(nullable = false)
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "cliente")
     private Endereco endereco;
 
