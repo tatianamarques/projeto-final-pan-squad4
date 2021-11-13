@@ -1,4 +1,4 @@
-package br.com.squad4.blue_bank.model;
+package br.com.squad4.blue_bank.enums;
 
 public enum TipoTransacao {
     DEB(1, "Débito", 0.01),

@@ -30,6 +30,9 @@ public class Cliente {
 
     @Column(nullable = false, unique = true)
     private String email;
+    
+    public Cliente() {
+	}
 
     public Cliente(String nome, String cpf, Endereco endereco, LocalDate dataNascimento, String email, Telefone telefone) {
         this.nome = nome;

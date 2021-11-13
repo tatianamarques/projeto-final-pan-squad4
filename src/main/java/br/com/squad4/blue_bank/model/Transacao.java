@@ -1,6 +1,9 @@
 package br.com.squad4.blue_bank.model;
 
 import javax.persistence.*;
+
+import br.com.squad4.blue_bank.enums.TipoTransacao;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

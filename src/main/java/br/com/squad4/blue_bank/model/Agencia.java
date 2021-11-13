@@ -12,7 +12,32 @@ public class Agencia {
     @Column(nullable = false)
     private String numero;
 
-    @Column(nullable = false)
-    private String telefone;
+    @Embedded
+    private TelefoneAgencia telefone;
+    
+    @Embedded
+    private EnderecoAgencia endereco;
+
+	public Agencia(String numero, TelefoneAgencia telefone, EnderecoAgencia endereco) {
+		this.numero = numero;
+		this.telefone = telefone;
+		this.endereco = endereco;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public TelefoneAgencia getTelefone() {
+		return telefone;
+	}
+	
+	public EnderecoAgencia getEndereco() {
+		return endereco;
+	}    
 
 }

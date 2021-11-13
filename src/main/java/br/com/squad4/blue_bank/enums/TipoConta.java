@@ -1,4 +1,4 @@
-package br.com.squad4.blue_bank.model;
+package br.com.squad4.blue_bank.enums;
 
 public enum TipoConta {
     CORRENTE(1,"Conta Corrente", 0.001, "001"),
