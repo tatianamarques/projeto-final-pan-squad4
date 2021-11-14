@@ -10,7 +10,7 @@ import br.com.squad4.blue_bank.enums.UF;
 public class EnderecoAgencia {
 
 	private String logradouro;
-	private String numero;
+	private String numeroEndereco;
 	private String complemento;
 	private String cidade;
 	@Enumerated(EnumType.STRING)
@@ -21,7 +21,7 @@ public class EnderecoAgencia {
 	public EnderecoAgencia(String logradouro, String numero, String complemento, String cidade, UF uf, String cep,
 			String bairro) {
 		this.logradouro = logradouro;
-		this.numero = numero;
+		this.numeroEndereco = numero;
 		this.complemento = complemento;
 		this.cidade = cidade;
 		this.uf = uf;
@@ -34,7 +34,7 @@ public class EnderecoAgencia {
 	}
 
 	public String getNumero() {
-		return numero;
+		return numeroEndereco;
 	}
 
 	public String getComplemento() {

@@ -31,6 +31,9 @@ public class Cliente {
     @Column(nullable = false, unique = true)
     private String email;
     
+    @OneToMany(mappedBy = "cliente")
+    private List<Conta> contas;
+    
     public Cliente() {
 	}
 

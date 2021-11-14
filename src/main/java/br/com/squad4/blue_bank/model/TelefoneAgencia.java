@@ -9,19 +9,19 @@ import br.com.squad4.blue_bank.enums.TipoTelefone;
 @Embeddable
 public class TelefoneAgencia {
 
-	private String numero;
+	private String numeroTelefone;
 	private String ddd;
 	@Enumerated(EnumType.STRING)
 	private TipoTelefone tipoTelefone;
 	
 	public TelefoneAgencia(String numero, String ddd, TipoTelefone tipoTelefone) {
-		this.numero = numero;
+		this.numeroTelefone = numero;
 		this.ddd = ddd;
 		this.tipoTelefone = tipoTelefone;
 	}
 
 	public String getNumero() {
-		return numero;
+		return numeroTelefone;
 	}
 
 	public String getDdd() {

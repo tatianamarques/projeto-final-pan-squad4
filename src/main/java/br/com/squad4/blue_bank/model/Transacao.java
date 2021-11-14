@@ -6,6 +6,7 @@ import br.com.squad4.blue_bank.enums.TipoTransacao;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Transacao {
@@ -23,8 +24,7 @@ public class Transacao {
     @Column(nullable = false)
     private TipoTransacao tipoTransacao;
 
-    @ManyToMany
-    @Column(nullable = false)
+    @ManyToOne 
     private Conta conta;
 
     public Transacao(LocalDate data, BigDecimal valor, TipoTransacao tipoTransacao, Conta conta) {

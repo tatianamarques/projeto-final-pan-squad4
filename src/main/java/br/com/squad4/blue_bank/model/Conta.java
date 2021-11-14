@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import br.com.squad4.blue_bank.enums.TipoConta;
@@ -24,7 +25,7 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @ManyToOne
     private Cliente cliente;
 
     @Column(nullable = false, unique = true)
@@ -54,9 +55,9 @@ public class Conta {
     @OneToMany(mappedBy = "destino")
     private List<Transferencia> destino;
 
-    @ManyToMany
-    @JoinTable(name = "conta_transacao", joinColumns = @JoinColumn(name = "conta_id", referencedColumnName = "id"),
-            inverseJoinColumns=@JoinColumn(name="transacao_id", referencedColumnName = "id"))
+    @OneToMany
+//    @JoinTable(name = "conta_transacao", joinColumns = @JoinColumn(name = "conta_id", referencedColumnName = "id"),
+//            inverseJoinColumns=@JoinColumn(name="transacao_id", referencedColumnName = "id"))
     private List<Transacao> transacoes = new ArrayList<>();
     
     
