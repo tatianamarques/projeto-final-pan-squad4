@@ -66,7 +66,7 @@ public class Conta {
     public Conta(){}
 
     public Conta(Cliente cliente, String numero, TipoConta tipoConta, BigDecimal saldo, BigDecimal saldoEspecial, boolean estaBloqueada, String senha, LocalDate dataAbertura) {
-        this.cliente = cliente;
+       // this.cliente = cliente;
         this.numero = numero;
         this.tipoConta = tipoConta;
         this.saldo = saldo;

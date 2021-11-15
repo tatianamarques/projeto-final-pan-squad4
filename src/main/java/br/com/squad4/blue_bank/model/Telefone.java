@@ -30,6 +30,18 @@ public class Telefone {
         this.tipoTelefone = tipoTelefone;
     }
 
+    public Telefone() {
+    }
+
+
+    public Telefone( String ddd, String numero, TipoTelefone tipoTelefone, Cliente cliente) {
+
+        this.ddd = ddd;
+        this.numero = numero;
+        this.tipoTelefone = tipoTelefone;
+        this.cliente = cliente;
+    }
+
     public Long getId() {
         return id;
     }

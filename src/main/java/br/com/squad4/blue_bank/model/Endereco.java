@@ -29,20 +29,20 @@ public class Endereco {
     @Column(nullable = false)
     private String cidade;
 
-    @Column(nullable = false, length = 2)
-    @Enumerated(EnumType.STRING)
-    private UF uf;
+
+    /*@Enumerated(EnumType.STRING)
+    private UF uf;*/
 
     @OneToOne
     private Cliente cliente;
 
-    public Endereco(String logradouro, String numero, String cep, String bairro, String cidade, UF uf) {
+    public Endereco(String logradouro, String numero, String cep, String bairro, String cidade) {
         this.logradouro = logradouro;
         this.numero = numero;
         this.cep = cep;
         this.bairro = bairro;
         this.cidade = cidade;
-        this.uf = uf;
+
     }
 
     public Long getId() {
@@ -89,13 +89,13 @@ public class Endereco {
         this.cidade = cidade;
     }
 
-    public UF getUf() {
+   /* public UF getUf() {
         return uf;
-    }
+    }*/
 
-    public void setUf(UF uf) {
+   /* public void setUf(UF uf) {
         this.uf = uf;
-    }
+    }*/
 
     public Cliente getCliente() {
         return cliente;

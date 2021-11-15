@@ -43,7 +43,8 @@ public class Cliente {
         this.endereco = endereco;
         this.dataNascimento = dataNascimento;
         this.email = email;
-        adicionarTelefone(telefone);
+       // this.telefone = telefone;
+        //adicionarTelefone(telefone);
     }
 
     public Long getId() {
@@ -70,9 +71,9 @@ public class Cliente {
         return telefone;
     }
 
-    public void adicionarTelefone(Telefone telefone) {
+   /* public void adicionarTelefone(Telefone telefone) {
         this.telefone.add(telefone);
-    }
+    }*/
 
     public Endereco getEndereco() {
         return endereco;
