@@ -30,6 +30,12 @@ public class Cliente {
 
     @Column(nullable = false, unique = true)
     private String email;
+    
+    @OneToMany(mappedBy = "cliente")
+    private List<Conta> contas;
+    
+    public Cliente() {
+	}
 
     public Cliente(String nome, String cpf, Endereco endereco, LocalDate dataNascimento, String email, Telefone telefone) {
         this.nome = nome;

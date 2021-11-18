@@ -2,6 +2,8 @@ package br.com.squad4.blue_bank.model;
 
 import javax.persistence.*;
 
+import br.com.squad4.blue_bank.enums.UF;
+
 @Entity
 public class Endereco {
 
