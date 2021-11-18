@@ -1,14 +1,13 @@
 package br.com.squad4.blue_bank.dto;
 
+import java.util.Optional;
+
 import br.com.squad4.blue_bank.enums.TipoTelefone;
 import br.com.squad4.blue_bank.model.Cliente;
 import br.com.squad4.blue_bank.model.Telefone;
 import br.com.squad4.blue_bank.repository.ClienteRepository;
 
-import javax.persistence.Column;
-import java.util.Optional;
-
-public class NovoTelefoneRequest {
+public class TelefoneDTO {
 
 
     private String ddd;
@@ -19,7 +18,7 @@ public class NovoTelefoneRequest {
 
     private Long idCliente;
 
-    public NovoTelefoneRequest(String ddd, String numero, TipoTelefone tipoTelefone , Long idCliente) {
+    public TelefoneDTO(String ddd, String numero, TipoTelefone tipoTelefone , Long idCliente) {
         this.ddd = ddd;
         this.numero = numero;
         this.tipoTelefone = tipoTelefone;
@@ -43,6 +42,10 @@ public class NovoTelefoneRequest {
       return null;
 
 
+    }
+    
+    public Telefone toModel() {
+    	return new Telefone(this.ddd,this.numero,this.tipoTelefone);
     }
 
 

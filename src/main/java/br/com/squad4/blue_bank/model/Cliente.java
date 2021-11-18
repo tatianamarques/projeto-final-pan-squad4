@@ -47,7 +47,9 @@ public class Cliente {
         //adicionarTelefone(telefone);
     }
 
-    public Long getId() {
+ 
+
+	public Long getId() {
         return id;
     }
 

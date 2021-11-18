@@ -1,11 +1,12 @@
 package br.com.squad4.blue_bank.services;
 
-import br.com.squad4.blue_bank.dto.NovoTelefoneRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.squad4.blue_bank.dto.TelefoneDTO;
 import br.com.squad4.blue_bank.model.Telefone;
 import br.com.squad4.blue_bank.repository.ClienteRepository;
 import br.com.squad4.blue_bank.repository.TelefoneRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class TelefoneService {
@@ -15,7 +16,7 @@ public class TelefoneService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public Telefone salvar( NovoTelefoneRequest novoTelefone){
+    public Telefone salvar( TelefoneDTO novoTelefone){
 
         Telefone telefone = novoTelefone.toModel(clienteRepository);
 

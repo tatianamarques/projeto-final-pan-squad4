@@ -2,9 +2,7 @@ package br.com.squad4.blue_bank.dto;
 
 import br.com.squad4.blue_bank.model.Endereco;
 
-import javax.persistence.Column;
-
-public class NovoEnderecoRequest {
+public class EnderecoDTO {
 
 
     private String logradouro;
@@ -22,7 +20,7 @@ public class NovoEnderecoRequest {
 
     private String cidade;
 
-    public NovoEnderecoRequest(String logradouro, String numero, String complemento, String cep, String bairro, String cidade) {
+    public EnderecoDTO(String logradouro, String numero, String complemento, String cep, String bairro, String cidade) {
         this.logradouro = logradouro;
         this.numero = numero;
         this.cep = cep;
@@ -32,7 +30,18 @@ public class NovoEnderecoRequest {
 
 
     public Endereco toModel() {
+    	
 
         return new Endereco(this.logradouro, this.numero, this.cep, this.bairro, this.cidade);
     }
+
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
 }
