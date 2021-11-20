@@ -60,7 +60,8 @@ public class Conta {
 //            inverseJoinColumns=@JoinColumn(name="transacao_id", referencedColumnName = "id"))
     private List<Transacao> transacoes = new ArrayList<>();
     
-    
+    @ManyToOne
+    private Agencia agencia;
 
     @Deprecated
     public Conta(){}

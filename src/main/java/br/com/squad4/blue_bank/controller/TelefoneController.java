@@ -15,7 +15,7 @@ import br.com.squad4.blue_bank.services.TelefoneService;
 
 @RestController
 @RequestMapping("/telefone")
-public class TefoneController {
+public class TelefoneController {
 
     @Autowired
     TelefoneService telefoneService;

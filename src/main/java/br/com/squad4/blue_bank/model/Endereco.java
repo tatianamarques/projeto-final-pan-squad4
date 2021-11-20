@@ -30,8 +30,8 @@ public class Endereco {
     private String cidade;
 
 
-    /*@Enumerated(EnumType.STRING)
-    private UF uf;*/
+    @Enumerated(EnumType.STRING)
+    private UF uf;
 
     @OneToOne
     private Cliente cliente;
@@ -89,13 +89,13 @@ public class Endereco {
         this.cidade = cidade;
     }
 
-   /* public UF getUf() {
+   public UF getUf() {
         return uf;
-    }*/
+    }
 
-   /* public void setUf(UF uf) {
+   public void setUf(UF uf) {
         this.uf = uf;
-    }*/
+    }
 
     public Cliente getCliente() {
         return cliente;

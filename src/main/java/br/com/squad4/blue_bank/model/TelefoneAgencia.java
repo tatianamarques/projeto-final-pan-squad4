@@ -20,6 +20,8 @@ public class TelefoneAgencia {
 		this.tipoTelefone = tipoTelefone;
 	}
 
+	public TelefoneAgencia(){}
+
 	public String getNumero() {
 		return numeroTelefone;
 	}
@@ -31,5 +33,6 @@ public class TelefoneAgencia {
 	public TipoTelefone getTipoTelefone() {
 		return tipoTelefone;
 	}
-		
+
+
 }

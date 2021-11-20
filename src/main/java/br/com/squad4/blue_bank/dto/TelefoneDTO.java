@@ -26,9 +26,6 @@ public class TelefoneDTO {
     }
 
 
-
-
-
     public Telefone toModel(ClienteRepository clienteRepository) {
 
 
@@ -48,5 +45,35 @@ public class TelefoneDTO {
     	return new Telefone(this.ddd,this.numero,this.tipoTelefone);
     }
 
+    public String getDdd() {
+        return ddd;
+    }
 
+    public void setDdd(String ddd) {
+        this.ddd = ddd;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public TipoTelefone getTipoTelefone() {
+        return tipoTelefone;
+    }
+
+    public void setTipoTelefone(TipoTelefone tipoTelefone) {
+        this.tipoTelefone = tipoTelefone;
+    }
+
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
+    }
 }
