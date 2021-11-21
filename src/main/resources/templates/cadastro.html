@@ -1,172 +1,181 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Cadastro - BlueBank</title>
-        <link href="css/styles.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-        <link rel="icon" href="images/favimage.png" type="image/x-icon"/>
-    </head>
-    <body class="bg-primary">
-        <div id="layoutAuthentication">
-            <div id="layoutAuthentication_content">
-                <main>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            
-                            <div class="col-lg-7">
-                                
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    
-                                    <div class="card-header">
-                                        
-                                        <div class="mx-auto" style="width: 210px; padding-top:30px; padding-bottom:30px;">
-                                       <img src="images/LOGObluebank-transp-hor.png" alt="Logo" width=auto height=auto>
-                                    </div>
-                                    
-                                       
-                                    
-                                    </div>
-                                    <div class="card-body">
-                                        <form>
-                                            
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="nomeCompleto" type="text" placeholder=" "/>
-                                                <label for="nomeCompleto">Nome Completo</label>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="cpf" type="text" placeholder="CPF"/>
-                                                        <label for="cpf">CPF</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="datnasc" type="date" placeholder=" "/>
-                                                        <label for="datnasc">Data de Nascimento</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
-                                                <label for="inputEmail">Email</label>
-                                            </div>
-                                          
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="telefone1" type="text" placeholder="Informe seu telefone" />
-                                                        <label for="telefone1">Telefone 1</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating">
-                                                        <input class="form-control" id="telefone2" type="text" placeholder="Informe seu telefone" />
-                                                        <label for="telefone2">Telefone 2</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="logradouro" type="text" placeholder="Informe seu endereço"/>
-                                                <label for="logradouro">Logradouro</label>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col-md-2">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="numerolog" type="text" placeholder="N"/>
-                                                        <label for="numerolog">N</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="complemento" type="text" placeholder="Complemento"/>
-                                                        <label for="complemento">Complemento</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="cep" type="text" placeholder="CEP"/>
-                                                        <label for="cep">CEP</label>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                    
-                                            <div class="row mb-3">
-                                                <div class="col-md-5">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="bairro" type="text" placeholder="Bairro"/>
-                                                        <label for="bairro">Bairro</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="cidade" type="text" placeholder="Cidade"/>
-                                                        <label for="cidade">Cidade</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="uf" type="text" placeholder="UF"/>
-                                                        <label for="id">UF</label>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <title>Cadastro - BlueBank</title>
+    <link href="../css/styles.css" rel="stylesheet"/>
+    <script crossorigin="anonymous"
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link href="../images/favimage.png" rel="icon" type="image/x-icon"/>
+</head>
+<body class="bg-primary">
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
 
+                    <div class="col-lg-7">
 
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
 
+                            <div class="card-header">
 
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" />
-                                                        <label for="inputPassword">Senha</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" />
-                                                        <label for="inputPasswordConfirm">Confirme a senha</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mt-4 mb-0">
-                                                <div class="d-grid"><a class="btn btn-primary btn-block" href="#">Criar Conta</a></div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="login.html">Já tem conta? Faça login</a></div>
-                                    </div>
+                                <div class="mx-auto" style="width: 210px; padding-top:30px; padding-bottom:30px;">
+                                    <img alt="Logo" height=auto src="../images/LOGObluebank-transp-hor.png" width=auto>
                                 </div>
+
+
+                            </div>
+                            <div class="card-body">
+                                <form>
+
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="nomeCompleto" placeholder=" " type="text"/>
+                                        <label for="nomeCompleto">Nome Completo</label>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="cpf" placeholder="CPF" type="text"/>
+                                                <label for="cpf">CPF</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="datnasc" placeholder=" " type="date"/>
+                                                <label for="datnasc">Data de Nascimento</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="inputEmail" placeholder="name@example.com"
+                                               type="email"/>
+                                        <label for="inputEmail">Email</label>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="telefone1" placeholder="Informe seu telefone"
+                                                       type="text"/>
+                                                <label for="telefone1">Telefone 1</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input class="form-control" id="telefone2" placeholder="Informe seu telefone"
+                                                       type="text"/>
+                                                <label for="telefone2">Telefone 2</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="logradouro" placeholder="Informe seu endereço"
+                                               type="text"/>
+                                        <label for="logradouro">Logradouro</label>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-2">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="numerolog" placeholder="N" type="text"/>
+                                                <label for="numerolog">N</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="complemento" placeholder="Complemento"
+                                                       type="text"/>
+                                                <label for="complemento">Complemento</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="cep" placeholder="CEP" type="text"/>
+                                                <label for="cep">CEP</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-5">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="bairro" placeholder="Bairro"
+                                                       type="text"/>
+                                                <label for="bairro">Bairro</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="cidade" placeholder="Cidade"
+                                                       type="text"/>
+                                                <label for="cidade">Cidade</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="uf" placeholder="UF" type="text"/>
+                                                <label for="uf">UF</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="inputPassword" placeholder="Create a password"
+                                                       type="password"/>
+                                                <label for="inputPassword">Senha</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="inputPasswordConfirm" placeholder="Confirm password"
+                                                       type="password"/>
+                                                <label for="inputPasswordConfirm">Confirme a senha</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 mb-0">
+                                        <div class="d-grid"><a class="btn btn-primary btn-block" href="#">Criar
+                                            Conta</a></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer text-center py-3">
+                                <div class="small"><a href="login.html">Já tem conta? Faça login</a></div>
                             </div>
                         </div>
                     </div>
-                </main>
+                </div>
             </div>
-            <div id="layoutAuthentication_footer">
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; BlueBank 2021</div>
-                            <div>
-                                <a href="#">Política de Privacidade</a>
-                                &middot;
-                                <a href="#">Termos &amp; Condições</a>
-                            </div>
-                        </div>
+        </main>
+    </div>
+    <div id="layoutAuthentication_footer">
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; BlueBank 2021</div>
+                    <div>
+                        <a href="#">Política de Privacidade</a>
+                        &middot;
+                        <a href="#">Termos &amp; Condições</a>
                     </div>
-                </footer>
+                </div>
             </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-    </body>
+        </footer>
+    </div>
+</div>
+<script crossorigin="anonymous"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
 </html>
