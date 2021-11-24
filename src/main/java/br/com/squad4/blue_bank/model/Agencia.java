@@ -1,6 +1,7 @@
 package br.com.squad4.blue_bank.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Agencia {
@@ -18,10 +19,16 @@ public class Agencia {
     @Embedded
     private EnderecoAgencia endereco;
 
+	@OneToMany(mappedBy = "agencia")
+	private List<Conta> contas;
+
 	public Agencia(String numero, TelefoneAgencia telefone, EnderecoAgencia endereco) {
 		this.numero = numero;
 		this.telefone = telefone;
 		this.endereco = endereco;
+	}
+   @Deprecated
+	public Agencia() {
 	}
 
 	public Long getId() {

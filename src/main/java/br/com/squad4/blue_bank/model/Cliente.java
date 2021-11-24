@@ -33,6 +33,8 @@ public class Cliente {
     
     @OneToMany(mappedBy = "cliente")
     private List<Conta> contas;
+
+
     
     public Cliente() {
 	}
@@ -101,6 +103,7 @@ public class Cliente {
         this.email = email;
     }
 
-
-
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
