@@ -5,16 +5,15 @@ import br.com.squad4.blue_bank.model.Agencia;
 import br.com.squad4.blue_bank.services.AgenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping(value= "/agencia")
+@RequestMapping(value= "/api/agencia")
 public class AgenciaController {
 
     @Autowired
@@ -28,11 +27,31 @@ public class AgenciaController {
         return ResponseEntity.ok().build();
     }
 
-//    public void criarAgencia(@RequestBody AgenciaDTO agenciaDTO){
-//        var agencia = new Agencia();
-//        agencia.setNumero(agenciaDTO.getNumeroAgencia());
-//        agencia.setTelefone(agenciaDTO.getTelefoneDTO());
-//        agencia.setEndereco(agenciaDTO.getEnderecoDTO());
-//
-//    }
+
+    @Transactional
+    @PutMapping(value = "/api/{id}")
+    public ResponseEntity<AgenciaDTO> editarAgencia(@PathVariable("id") Long id, @RequestBody @Valid AgenciaDTO request){
+        Optional<Agencia> agencia = agenciaService.editar(request, id);
+        if (agencia.isPresent()){
+        return ResponseEntity.ok().build();}
+        return ResponseEntity.notFound().build();
+    }
+
+
+    @GetMapping("/api/listartodas")
+    public ResponseEntity<List<Agencia>> listarAgencias(){
+        List<Agencia> lista = agenciaService.buscarAgencias();
+        return ResponseEntity.ok(lista);
+    }
+
+
+    @GetMapping("/api/{id}")
+    public ResponseEntity<AgenciaDTO> buscarPorId(@PathVariable Long id){
+        Optional<Agencia> agencia = agenciaService.buscarPorId(id);
+        if(agencia.isPresent()){
+            return ResponseEntity.ok(new AgenciaDTO(agencia.get()));
+        }
+        return ResponseEntity.notFound().build();
+    }
+
 }

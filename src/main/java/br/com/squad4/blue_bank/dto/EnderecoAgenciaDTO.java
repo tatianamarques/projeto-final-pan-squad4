@@ -13,31 +13,21 @@ public class EnderecoAgenciaDTO {
     private String cep;
     private String bairro;
 
-    public EnderecoAgenciaDTO(String logradouro, String numeroEndereco, String cidade, UF uf, String cep, String bairro) {
-        this.logradouro = logradouro;
-        this.numeroEndereco = numeroEndereco;
-        this.cidade = cidade;
-        this.uf = uf;
-        this.cep = cep;
-        this.bairro = bairro;
+    public EnderecoAgenciaDTO(EnderecoAgencia enderecoAgencia) {
+        this.logradouro = enderecoAgencia.getLogradouro();
+        this.numeroEndereco = enderecoAgencia.getNumero();
+        this.complemento = enderecoAgencia.getComplemento();
+        this.cidade = enderecoAgencia.getCidade();
+        this.uf = enderecoAgencia.getUf();
+        this.cep = enderecoAgencia.getCep();
+        this.bairro = enderecoAgencia.getBairro();
     }
     public EnderecoAgenciaDTO(){}
 
     public EnderecoAgencia toModel(){
-        return new EnderecoAgencia(this.logradouro, this.numeroEndereco,  this.cidade, this.uf, this.cep, this.bairro);
+        return new EnderecoAgencia(this.logradouro, this.numeroEndereco, this.complemento, this.cidade, this.uf, this.cep, this.bairro);
     }
 
-    @Override
-    public String toString() {
-        return "EnderecoAgenciaDTO{" +
-                "logradouro='" + logradouro + '\'' +
-                ", numeroEndereco='" + numeroEndereco + '\'' +
-                ", cidade='" + cidade + '\'' +
-                ", uf=" + uf +
-                ", cep='" + cep + '\'' +
-                ", bairro='" + bairro + '\'' +
-                '}';
-    }
 
     public String getLogradouro() {
         return logradouro;
@@ -94,4 +84,5 @@ public class EnderecoAgenciaDTO {
     public void setBairro(String bairro) {
         this.bairro = bairro;
     }
+
 }

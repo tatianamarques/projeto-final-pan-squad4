@@ -6,60 +6,50 @@ import br.com.squad4.blue_bank.model.TelefoneAgencia;
 
 public class AgenciaDTO {
 
-    private String numeroAgencia;
-    private TelefoneAgencia telefoneDTO;
-    private EnderecoAgencia enderecoDTO;
+    private String numero;
+    private TelefoneAgenciaDTO telefoneDTO;
+    private EnderecoAgenciaDTO enderecoDTO;
 
-    public AgenciaDTO(Agencia agencia){
-        this.numeroAgencia = numeroAgencia;
-    }
     public AgenciaDTO(){}
 
-    public AgenciaDTO(String numeroAgencia, TelefoneAgencia telefone, EnderecoAgencia enderecoID){
-        this.numeroAgencia = numeroAgencia;
-        this.telefoneDTO = telefone;
-        this.enderecoDTO = enderecoID;
+    public AgenciaDTO(Agencia agencia){
+        this.numero = agencia.getNumero();
+        this.telefoneDTO = new TelefoneAgenciaDTO(agencia.getTelefone());
+        this.enderecoDTO = new EnderecoAgenciaDTO(agencia.getEndereco());
     }
 
 
     public Agencia toModel(){
-        EnderecoAgencia endereco = new EnderecoAgencia();
-        TelefoneAgencia telefone = new TelefoneAgencia();
-        Agencia agencia = new Agencia(numeroAgencia, telefone, endereco);
+        EnderecoAgencia endereco = enderecoDTO.toModel();
+        TelefoneAgencia telefone = telefoneDTO.toModel();
+        Agencia agencia = new Agencia(numero, telefone, endereco);
 
         return agencia;
     }
 
-    @Override
-    public String toString() {
-        return "AgenciaDTO{" +
-                "numero='" + numeroAgencia + '\'' +
-                ", telefoneDTO=" + telefoneDTO +
-                ", enderecoDTO=" + enderecoDTO +
-                '}';
+
+
+    public String getNumero() {
+        return numero;
     }
 
-    public String getNumeroAgencia() {
-        return numeroAgencia;
+    public void setNumero(String numeroAgencia) {
+        this.numero = numeroAgencia;
     }
 
-    public void setNumeroAgencia(String numeroAgencia) {
-        this.numeroAgencia = numeroAgencia;
-    }
-
-    public TelefoneAgencia getTelefoneDTO() {
+    public TelefoneAgenciaDTO getTelefoneDTO() {
         return telefoneDTO;
     }
 
-    public void setTelefoneDTO(TelefoneAgencia telefoneDTO) {
+    public void setTelefoneDTO(TelefoneAgenciaDTO telefoneDTO) {
         this.telefoneDTO = telefoneDTO;
     }
 
-    public EnderecoAgencia getEnderecoDTO() {
+    public EnderecoAgenciaDTO getEnderecoDTO() {
         return enderecoDTO;
     }
 
-    public void setEnderecoDTO(EnderecoAgencia enderecoDTO) {
+    public void setEnderecoDTO(EnderecoAgenciaDTO enderecoDTO) {
         this.enderecoDTO = enderecoDTO;
     }
 }

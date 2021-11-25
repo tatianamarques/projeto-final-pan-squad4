@@ -13,25 +13,16 @@ public class TelefoneAgenciaDTO {
 
     public TelefoneAgenciaDTO(){}
 
-    public TelefoneAgenciaDTO(String ddd, String numeroTelefone, TipoTelefone tipoTelefone){
-        this.ddd = ddd;
-        this.numeroTelefone = numeroTelefone;
-        this.tipoTelefone = tipoTelefone;
+    public TelefoneAgenciaDTO(TelefoneAgencia telefoneAgencia){
+        this.ddd = telefoneAgencia.getDdd();
+        this.numeroTelefone = telefoneAgencia.getNumero();
+        this.tipoTelefone = telefoneAgencia.getTipoTelefone();
     }
 
     public TelefoneAgencia toModel(){
         return new TelefoneAgencia(this.ddd, this.numeroTelefone, this.tipoTelefone);
     }
 
-
-    @Override
-    public String toString() {
-        return "TelefoneAgenciaDTO{" +
-                "ddd='" + ddd + '\'' +
-                ", numeroTelefone='" + numeroTelefone + '\'' +
-                ", tipoTelefone=" + tipoTelefone +
-                '}';
-    }
 
     public String getDdd() {
         return ddd;
