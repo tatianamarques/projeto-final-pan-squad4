@@ -23,6 +23,7 @@ public class Telefone {
 
     @ManyToOne
     private Cliente cliente;
+    
 
     public Telefone(String ddd, String numero, TipoTelefone tipoTelefone) {
         this.ddd = ddd;
