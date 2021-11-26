@@ -54,7 +54,7 @@ public class ClienteDTO {
 	    	cliente.setEndereco(endereco);
 	    	cliente.setDataNascimento(dataNascimento);
 	    	cliente.setEmail(email);
-	    	//cliente. (telefoneDTO.toModel()); IMPLEMENTAR QUANDO TIVER O TELEFONE
+	    	cliente.setTelefone(telefoneDTO.toModel()); 
 	    	
 	    	
 	    	
