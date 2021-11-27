@@ -26,9 +26,11 @@ public class EnderecoDTO {
 		this.uf = endereco.getUf();
 	}
 
+
 	public String getLogradouro() {
 		return logradouro;
 	}
+
 
 	public String getNumero() {
 		return numero;

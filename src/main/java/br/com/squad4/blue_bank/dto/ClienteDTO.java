@@ -35,6 +35,7 @@ public class ClienteDTO implements Serializable{
 	}
 
 
+
 	public String getCpf() {
 		return cpf;
 	}

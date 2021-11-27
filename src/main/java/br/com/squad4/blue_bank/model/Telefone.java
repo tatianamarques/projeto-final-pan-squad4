@@ -1,6 +1,7 @@
 package br.com.squad4.blue_bank.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import br.com.squad4.blue_bank.enums.TipoTelefone;
 
@@ -8,7 +9,7 @@ import br.com.squad4.blue_bank.enums.TipoTelefone;
 public class Telefone {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
@@ -22,6 +23,8 @@ public class Telefone {
     private TipoTelefone tipoTelefone;
 
     @ManyToOne
+    @JoinColumn(name="CLIENTE_ID")
+    @NotNull(message = "COLUNA CLIENTE_ID NAO PODE ESTAR VAZIA!")
     private Cliente cliente;
     
 
