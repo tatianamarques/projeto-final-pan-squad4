@@ -10,7 +10,7 @@ public class Agencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String numero;
 
     @Embedded
@@ -31,6 +31,9 @@ public class Agencia {
 	public Agencia() {
 	}
 
+	public Agencia(){}
+
+
 	public Long getId() {
 		return id;
 	}
@@ -45,6 +48,30 @@ public class Agencia {
 	
 	public EnderecoAgencia getEndereco() {
 		return endereco;
-	}    
+	}
+
+	public List<Conta> getContas() {
+		return contas;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public void setTelefone(TelefoneAgencia telefone) {
+		this.telefone = telefone;
+	}
+
+	public void setEndereco(EnderecoAgencia endereco) {
+		this.endereco = endereco;
+	}
+
+	public void setContas(List<Conta> contas) {
+		this.contas = contas;
+	}
 
 }

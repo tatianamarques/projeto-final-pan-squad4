@@ -32,6 +32,19 @@ public class EnderecoAgencia {
 	public EnderecoAgencia() {
 	}
 
+	public EnderecoAgencia(String logradouro, String numero, String cidade, UF uf, String cep, String bairro) {
+		this.logradouro = logradouro;
+		this.numeroEndereco = numero;
+		this.cidade = cidade;
+		this.uf = uf;
+		this.cep = cep;
+		this.bairro = bairro;
+	}
+
+	public EnderecoAgencia() {
+
+	}
+
 	public String getLogradouro() {
 		return logradouro;
 	}

@@ -23,6 +23,8 @@ public class TelefoneAgencia {
 	public TelefoneAgencia() {
 	}
 
+	public TelefoneAgencia(){}
+
 	public String getNumero() {
 		return numeroTelefone;
 	}
@@ -34,5 +36,6 @@ public class TelefoneAgencia {
 	public TipoTelefone getTipoTelefone() {
 		return tipoTelefone;
 	}
-		
+
+
 }
