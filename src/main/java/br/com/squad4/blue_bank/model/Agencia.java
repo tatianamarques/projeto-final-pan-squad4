@@ -27,6 +27,9 @@ public class Agencia {
 		this.telefone = telefone;
 		this.endereco = endereco;
 	}
+   @Deprecated
+	public Agencia() {
+	}
 
 	public Agencia(){}
 

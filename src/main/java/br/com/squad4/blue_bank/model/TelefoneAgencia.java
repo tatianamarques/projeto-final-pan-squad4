@@ -19,6 +19,9 @@ public class TelefoneAgencia {
 		this.ddd = ddd;
 		this.tipoTelefone = tipoTelefone;
 	}
+      @Deprecated
+	public TelefoneAgencia() {
+	}
 
 	public TelefoneAgencia(){}
 

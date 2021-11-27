@@ -10,9 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -25,8 +22,14 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    @ManyToOne
+    private Agencia agencia;
+
+
     @ManyToOne
     private Cliente cliente;
+
 
     @Column(nullable = false, unique = true)
     private String numero;
@@ -66,8 +69,9 @@ public class Conta {
     @Deprecated
     public Conta(){}
 
-    public Conta(Cliente cliente, String numero, TipoConta tipoConta, BigDecimal saldo, BigDecimal saldoEspecial, boolean estaBloqueada, String senha, LocalDate dataAbertura) {
-       // this.cliente = cliente;
+    public Conta(Agencia agencia,Cliente cliente, String numero, TipoConta tipoConta, BigDecimal saldo, BigDecimal saldoEspecial, boolean estaBloqueada, String senha, LocalDate dataAbertura) {
+        this.agencia=agencia;
+        this.cliente =cliente;
         this.numero = numero;
         this.tipoConta = tipoConta;
         this.saldo = saldo;
@@ -77,6 +81,12 @@ public class Conta {
         this.dataAbertura = dataAbertura;
     }
 
+
+
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getId() {
         return id;
@@ -118,7 +128,15 @@ public class Conta {
         return transacoes;
     }
 
-	@Override
+    public Agencia getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(Agencia agencia) {
+        this.agencia = agencia;
+    }
+
+    @Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
