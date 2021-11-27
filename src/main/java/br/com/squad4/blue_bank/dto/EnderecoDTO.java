@@ -1,47 +1,59 @@
 package br.com.squad4.blue_bank.dto;
 
+import br.com.squad4.blue_bank.enums.UF;
 import br.com.squad4.blue_bank.model.Endereco;
 
 public class EnderecoDTO {
 
-
     private String logradouro;
-
-
     private String numero;
-
-
     private String complemento;
-
-
-    private String cep;
-
+    private String cep;    
     private String bairro;
-
     private String cidade;
+    private UF uf;
+    
+    public EnderecoDTO() {
+	}
+    
+    public EnderecoDTO(Endereco endereco) {
+		this.logradouro = endereco.getLogradouro();
+		this.numero = endereco.getNumero();
+		this.complemento = endereco.getComplemento();
+		this.cep = endereco.getCep();
+		this.bairro = endereco.getBairro();
+		this.cidade = endereco.getCidade();
+		this.uf = endereco.getUf();
+	}
 
-    public EnderecoDTO(String logradouro, String numero, String complemento, String cep, String bairro, String cidade) {
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.cep = cep;
-        this.bairro = bairro;
-        this.cidade = cidade;
-    }
+
+	public String getLogradouro() {
+		return logradouro;
+	}
 
 
-    public Endereco toModel() {
-    	
-
-        return new Endereco(this.logradouro, this.numero, this.cep, this.bairro, this.cidade);
-    }
-
+	public String getNumero() {
+		return numero;
+	}
 
 	public String getComplemento() {
 		return complemento;
 	}
 
-
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
+	public String getCep() {
+		return cep;
 	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public UF getUf() {
+		return uf;
+	}	
+
 }

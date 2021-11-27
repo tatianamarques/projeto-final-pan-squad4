@@ -20,10 +20,10 @@ public class Cliente {
 
     @Column(nullable = false)
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
-    private List<Telefone> telefone = new ArrayList<>();
+    private List<Telefone> telefones = new ArrayList<>();
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "cliente")
-    private Endereco endereco;
+    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE,CascadeType.PERSIST}, mappedBy = "cliente")
+    private Endereco endereco = new Endereco();
 
     @Column(name = "data_nascimento", nullable = false)
     private LocalDate dataNascimento;
@@ -31,7 +31,7 @@ public class Cliente {
     @Column(nullable = false, unique = true)
     private String email;
     
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "cliente")
     private List<Conta> contas;
 
 
@@ -45,8 +45,8 @@ public class Cliente {
         this.endereco = endereco;
         this.dataNascimento = dataNascimento;
         this.email = email;
-       // this.telefone = telefone;
-        //adicionarTelefone(telefone);
+        adicionarTelefone(telefone);
+
     }
 
  
@@ -54,6 +54,9 @@ public class Cliente {
 	public Long getId() {
         return id;
     }
+	public void setId(Long id) {
+		this.id=id;
+	}
 
     public String getNome() {
         return nome;
@@ -71,13 +74,18 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public List<Telefone> getTelefone() {
-        return telefone;
+    public List<Telefone> getTelefones() {
+        return telefones;
     }
 
-   /* public void adicionarTelefone(Telefone telefone) {
+   public void adicionarTelefone(Telefone telefone) {
+        this.telefones.add(telefone);
+   }
+
+   public void setTelefone(Telefone telefone) {
         this.telefone.add(telefone);
-    }*/
+    }
+
 
     public Endereco getEndereco() {
         return endereco;
@@ -106,4 +114,5 @@ public class Cliente {
     public void setId(Long id) {
         this.id = id;
     }
+
 }

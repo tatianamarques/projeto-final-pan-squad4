@@ -1,52 +1,55 @@
 package br.com.squad4.blue_bank.dto;
 
-import java.util.Optional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import br.com.squad4.blue_bank.enums.TipoTelefone;
-import br.com.squad4.blue_bank.model.Cliente;
 import br.com.squad4.blue_bank.model.Telefone;
-import br.com.squad4.blue_bank.repository.ClienteRepository;
 
 public class TelefoneDTO {
 
+	private String ddd;
+	private String numero;
+	private TipoTelefone tipoTelefone;
+	
+	
+	public TelefoneDTO() {
+	}
 
-    private String ddd;
+	
+	public TelefoneDTO(Telefone telefone) {
+		this.ddd = telefone.getDdd();
+		this.numero = telefone.getNumero();
+		this.tipoTelefone = telefone.getTipoTelefone();
+	}
+	
 
-    private  String numero;
+	public String getDdd() {
+		return ddd;
+	}
 
-    private TipoTelefone tipoTelefone;
+	public void setDdd(String ddd) {
+		this.ddd = ddd;
+	}
 
-    private Long idCliente;
+	public String getNumero() {
+		return numero;
+	}
 
-    public TelefoneDTO(String ddd, String numero, TipoTelefone tipoTelefone , Long idCliente) {
-        this.ddd = ddd;
-        this.numero = numero;
-        this.tipoTelefone = tipoTelefone;
-        this.idCliente = idCliente;
-    }
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
 
+	public TipoTelefone getTipoTelefone() {
+		return tipoTelefone;
+	}
 
-
-
-
-    public Telefone toModel(ClienteRepository clienteRepository) {
-
-
-    Optional<Cliente> cliente = clienteRepository.findById(idCliente);
-
-     if(cliente.isPresent()){
-         return new Telefone(this.ddd, this.numero, this.tipoTelefone, cliente.get());
-
-     }
-
-      return null;
-
-
-    }
-    
-    public Telefone toModel() {
-    	return new Telefone(this.ddd,this.numero,this.tipoTelefone);
-    }
-
-
+	public void setTipoTelefone(TipoTelefone tipoTelefone) {
+		this.tipoTelefone = tipoTelefone;
+	}
+	
+	public static List<TelefoneDTO> listaTelefoneDTO(List<Telefone> telefones){
+		return telefones.stream().map(TelefoneDTO::new).collect(Collectors.toList());
+	}
+	
 }
