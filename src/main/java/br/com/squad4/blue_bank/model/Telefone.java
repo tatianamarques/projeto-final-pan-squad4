@@ -26,6 +26,7 @@ public class Telefone {
     @JoinColumn(name="CLIENTE_ID")
     @NotNull(message = "COLUNA CLIENTE_ID NAO PODE ESTAR VAZIA!")
     private Cliente cliente;
+    
 
     public Telefone(String ddd, String numero, TipoTelefone tipoTelefone) {
         this.ddd = ddd;
