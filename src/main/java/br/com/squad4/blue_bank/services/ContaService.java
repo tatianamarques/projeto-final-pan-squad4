@@ -7,8 +7,13 @@ import br.com.squad4.blue_bank.model.Conta;
 import br.com.squad4.blue_bank.repository.AgenciaRepository;
 import br.com.squad4.blue_bank.repository.ClienteRepository;
 import br.com.squad4.blue_bank.repository.ContaRepository;
+
+
+import javassist.tools.rmi.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 
 @Service
@@ -31,4 +36,12 @@ public class ContaService {
     public Conta insert(Conta conta) {
             return repository.save(conta);
     }
+
+
+    public Conta find(Long id) throws ObjectNotFoundException {
+        Optional<Conta> conta = repository.findById(id);
+        return conta.orElseThrow(() -> new ObjectNotFoundException(
+                "Conta não encontrado! Id: " + id + ", Tipo: " + Conta.class.getName()));
+    }
+
 }

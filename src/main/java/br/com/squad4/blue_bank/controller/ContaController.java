@@ -13,13 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+
 import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping("/conta")
+@RequestMapping("/api/conta")
 public class ContaController {
 
     @Autowired

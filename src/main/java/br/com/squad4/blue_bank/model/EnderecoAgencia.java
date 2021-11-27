@@ -28,6 +28,9 @@ public class EnderecoAgencia {
 		this.cep = cep;
 		this.bairro = bairro;
 	}
+     @Deprecated
+	public EnderecoAgencia() {
+	}
 
 	public String getLogradouro() {
 		return logradouro;
