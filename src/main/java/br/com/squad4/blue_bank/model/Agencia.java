@@ -10,7 +10,7 @@ public class Agencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String numero;
 
     @Embedded
@@ -30,9 +30,6 @@ public class Agencia {
 
 	public Agencia(){}
 
-	public Agencia(String numero) {
-		this.numero = numero;
-	}
 
 	public Long getId() {
 		return id;
@@ -73,4 +70,5 @@ public class Agencia {
 	public void setContas(List<Conta> contas) {
 		this.contas = contas;
 	}
+
 }

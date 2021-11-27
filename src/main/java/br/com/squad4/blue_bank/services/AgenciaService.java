@@ -6,8 +6,7 @@ import br.com.squad4.blue_bank.repository.AgenciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class AgenciaService {
@@ -44,4 +43,15 @@ public class AgenciaService {
     public List<Agencia> buscarAgencias() {
         return agenciaRepository.findAll();
     }
+
+
+    public Agencia buscarPorNumero(String numero, List<Agencia> agencias){
+        for(Agencia agencia : agencias){
+            if(agencia.getNumero().equals(numero)){
+                return agencia;
+            }
+        }
+        return null;
+    }
+
 }
