@@ -1,6 +1,5 @@
 package br.com.squad4.blue_bank.services;
 
-import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 import br.com.squad4.blue_bank.form.TelefoneForm;
 import br.com.squad4.blue_bank.model.Cliente;
 import br.com.squad4.blue_bank.model.Telefone;
-import br.com.squad4.blue_bank.repository.ClienteRepository;
 import br.com.squad4.blue_bank.repository.TelefoneRepository;
 
 @Service
@@ -20,8 +18,6 @@ public class TelefoneService {
     @Autowired
     private TelefoneRepository telefoneRepository;
     
-    @Autowired
-    private ClienteRepository clienteRepository;
 
     @Transactional
     public Telefone salvar(TelefoneForm telefoneForm,Optional<Cliente> cliente){

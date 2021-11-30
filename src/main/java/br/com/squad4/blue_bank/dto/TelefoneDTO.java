@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import br.com.squad4.blue_bank.enums.TipoTelefone;
 import br.com.squad4.blue_bank.model.Telefone;
+import br.com.squad4.blue_bank.utils.Formatacoes;
 public class TelefoneDTO {
 	private String ddd;
 	private String numero;
@@ -14,7 +15,11 @@ public class TelefoneDTO {
 	
 	public TelefoneDTO(Telefone telefone) {
 		this.ddd = telefone.getDdd();
-		this.numero = telefone.getNumero();
+		if(telefone.getTipoTelefone() == TipoTelefone.CELULAR) {
+			this.numero = Formatacoes.mascaraCelular(telefone.getNumero());			
+		}else {
+			this.numero = Formatacoes.mascaraTelefone(telefone.getNumero());	
+		}
 		this.tipoTelefone = telefone.getTipoTelefone();
 	}
 	

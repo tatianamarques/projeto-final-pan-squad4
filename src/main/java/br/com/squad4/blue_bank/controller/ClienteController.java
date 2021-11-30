@@ -28,7 +28,7 @@ import br.com.squad4.blue_bank.services.ClienteService;
 import br.com.squad4.blue_bank.services.TelefoneService;
 
 @RestController
-@RequestMapping(value = "/cliente")
+@RequestMapping(value = "/api/cliente")
 public class ClienteController {
 
 	@Autowired

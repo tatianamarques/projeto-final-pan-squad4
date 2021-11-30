@@ -19,44 +19,40 @@ import br.com.squad4.blue_bank.repository.EnderecoRepository;
 public class ClienteService {
 	@Autowired
 	private ClienteRepository clienteRepository;
-	
+
 	@Autowired
 	private EnderecoRepository enderecoRepository;
-	
+
 	@Transactional
-	public Cliente salvar(ClienteForm cliente) {		
-		return clienteRepository.save(cliente.toModel());		
+	public Cliente salvar(ClienteForm cliente) {
+		return clienteRepository.save(cliente.toModel());
 	}
-	
-	
-	public Optional<Cliente> buscarPorId(Long id) {		
+
+	public Optional<Cliente> buscarPorId(Long id) {
 		return clienteExiste(id);
 	}
 
-
-	
-	public List<Cliente> buscarTodos(){
+	public List<Cliente> buscarTodos() {
 		return clienteRepository.findAll();
 	}
-
 
 	@Transactional
 	public boolean deletar(Long id) {
 		Optional<Cliente> cliente = buscarPorId(id);
-		if(cliente.isPresent()) {
-			clienteRepository.deleteById(id);		
+		if (cliente.isPresent()) {
+			clienteRepository.deleteById(id);
 			return true;
 		}
 		return false;
-		
+
 	}
 
 	@Transactional
 	public Optional<Cliente> atualizar(Long id, ClienteAtualizacaoForm clienteForm) {
-		if(clienteExiste(id).isEmpty()) {
+		if (clienteExiste(id).isEmpty()) {
 			return clienteExiste(id);
-		}else {
-			Cliente cliente = clienteExiste(id).get();		
+		} else {
+			Cliente cliente = clienteExiste(id).get();
 			cliente.setDataNascimento(clienteForm.getDataNascimento());
 			cliente.setEmail(clienteForm.getEmail());
 			cliente.setNome(clienteForm.getNome());
@@ -67,17 +63,19 @@ public class ClienteService {
 			endereco.setComplemento(clienteForm.getEnderecoForm().getComplemento());
 			endereco.setLogradouro(clienteForm.getEnderecoForm().getLogradouro());
 			endereco.setNumero(clienteForm.getEnderecoForm().getNumero());
-			endereco.setUf(clienteForm.getEnderecoForm().getUf());			
+			endereco.setUf(clienteForm.getEnderecoForm().getUf());
 			return Optional.of(cliente);
 		}
-		
+
 	}
 
 	private Optional<Cliente> clienteExiste(Long id) {
 		Optional<Cliente> cliente = clienteRepository.findById(id);
-		if(cliente.isPresent()) {
+		if (cliente.isPresent()) {
 			return cliente;
 		}
 		return Optional.empty();
 	}
+
+	
 }

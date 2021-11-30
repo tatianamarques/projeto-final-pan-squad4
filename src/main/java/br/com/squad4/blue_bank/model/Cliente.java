@@ -54,9 +54,7 @@ public class Cliente {
 	public Long getId() {
         return id;
     }
-	public void setId(Long id) {
-		this.id=id;
-	}
+
 
     public String getNome() {
         return nome;
@@ -83,7 +81,7 @@ public class Cliente {
    }
 
    public void setTelefone(Telefone telefone) {
-        this.telefone.add(telefone);
+        this.telefones.add(telefone);
     }
 
 

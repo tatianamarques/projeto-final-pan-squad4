@@ -1,6 +1,7 @@
 package br.com.squad4.blue_bank.dto;
 import br.com.squad4.blue_bank.enums.UF;
 import br.com.squad4.blue_bank.model.Endereco;
+import br.com.squad4.blue_bank.utils.Formatacoes;
 public class EnderecoDTO {
     private String logradouro;
     private String numero;
@@ -9,13 +10,15 @@ public class EnderecoDTO {
     private String bairro;
     private String cidade;
     private UF uf;
+    
     public EnderecoDTO() {
 	}
+    
     public EnderecoDTO(Endereco endereco) {
 		this.logradouro = endereco.getLogradouro();
 		this.numero = endereco.getNumero();
 		this.complemento = endereco.getComplemento();
-		this.cep = endereco.getCep();
+		this.cep = Formatacoes.mascaraCep(endereco.getCep());
 		this.bairro = endereco.getBairro();
 		this.cidade = endereco.getCidade();
 		this.uf = endereco.getUf();

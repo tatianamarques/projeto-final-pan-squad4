@@ -2,14 +2,28 @@ package br.com.squad4.blue_bank.form;
 
 import java.util.Optional;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import br.com.squad4.blue_bank.enums.TipoTelefone;
 import br.com.squad4.blue_bank.model.Cliente;
 import br.com.squad4.blue_bank.model.Telefone;
+import br.com.squad4.blue_bank.utils.Formatacoes;
 
 public class TelefoneForm {
 	
+	@NotNull
+	@NotBlank
+	@Size(min = 2,max = 3)
 	private String ddd;
+	@NotNull
+	@NotBlank
+	@Size(min = 8,max = 15)
 	private String numero;
+	@Enumerated(EnumType.STRING)
 	private TipoTelefone tipoTelefone;
 	private Long idCliente;	
 	
@@ -18,13 +32,13 @@ public class TelefoneForm {
 		
 	public TelefoneForm(String ddd, String numero, TipoTelefone tipoTelefone) {
 		this.ddd = ddd;
-		this.numero = numero;
+		this.numero = Formatacoes.retirarPontosHifen(numero);
 		this.tipoTelefone = tipoTelefone;
 	}
 
 	public TelefoneForm(String ddd, String numero, TipoTelefone tipoTelefone, Long idCliente) {
 		this.ddd = ddd;
-		this.numero = numero;
+		this.numero = Formatacoes.retirarPontosHifen(numero);
 		this.tipoTelefone = tipoTelefone;
 		this.idCliente = idCliente;
 	}
@@ -50,7 +64,7 @@ public class TelefoneForm {
 	public Optional<Telefone> toModel (Optional<Cliente> cliente) {
 
 		if (cliente.isPresent()) {
-			return Optional.of(new Telefone(this.ddd, this.numero, this.tipoTelefone,cliente.get()));
+			return Optional.of(new Telefone(this.ddd, Formatacoes.retirarPontosHifen(this.numero), this.tipoTelefone,cliente.get()));
 		}
 		return Optional.empty();
 

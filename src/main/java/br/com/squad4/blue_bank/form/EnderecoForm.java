@@ -1,16 +1,34 @@
 package br.com.squad4.blue_bank.form;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import br.com.squad4.blue_bank.enums.UF;
 import br.com.squad4.blue_bank.model.Endereco;
+import br.com.squad4.blue_bank.utils.Formatacoes;
 
 public class EnderecoForm {
 	
+	@NotNull
+	@NotBlank
 	private String logradouro;
+	@NotNull
+	@NotBlank
 	private String numero;
 	private String complemento;
+	@NotNull
+	@NotBlank
 	private String cep;
+	@NotNull
+	@NotBlank
 	private String bairro;
+	@NotNull
+	@NotBlank
 	private String cidade;
+	@NotNull
+	@NotBlank
+	@Size(min = 2,max = 2)
 	private UF uf;
 
 	public EnderecoForm() {
@@ -20,7 +38,7 @@ public class EnderecoForm {
 			            String cep,String bairro,String cidade, UF uf) {
         this.logradouro = logradouro;
         this.numero = numero;
-        this.cep = cep;
+        this.cep = Formatacoes.retirarPontosHifen(cep);
         this.bairro = bairro;
         this.cidade = cidade;
         this.uf = uf;
@@ -28,7 +46,7 @@ public class EnderecoForm {
     }
 
 	public Endereco toModel() {
-		return new Endereco(logradouro, numero, cep, complemento, bairro, cidade, uf);
+		return new Endereco(logradouro, numero, Formatacoes.retirarPontosHifen(cep), complemento, bairro, cidade, uf);
 	}
 	
 	

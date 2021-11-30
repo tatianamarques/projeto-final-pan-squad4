@@ -28,9 +28,7 @@ public class EnderecoAgencia {
 		this.cep = cep;
 		this.bairro = bairro;
 	}
-     @Deprecated
-	public EnderecoAgencia() {
-	}
+
 
 	public EnderecoAgencia(String logradouro, String numero, String cidade, UF uf, String cep, String bairro) {
 		this.logradouro = logradouro;

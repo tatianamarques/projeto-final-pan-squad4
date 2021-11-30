@@ -3,6 +3,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Collectors;
 import br.com.squad4.blue_bank.model.Cliente;
+import br.com.squad4.blue_bank.utils.Formatacoes;
 public class ClienteDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -17,7 +18,7 @@ public class ClienteDTO implements Serializable{
 	public ClienteDTO(Cliente cliente) {
 		this.id = cliente.getId();
 		this.nome = cliente.getNome();
-		this.cpf = cliente.getCpf();
+		this.cpf = Formatacoes.mascaraCpf(cliente.getCpf());
 	}
 	public Long getId() {
 		return id;
