@@ -1,12 +1,15 @@
 package br.com.squad4.blue_bank.controller;
 
 import java.net.URI;
-import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -64,9 +68,19 @@ public class ClienteController {
 	}
 
 	@GetMapping
-	public ResponseEntity<List<ClienteDTO>> buscarTodos() {
-		List<Cliente> clientes = clienteService.buscarTodos();
-		return ResponseEntity.ok(ClienteDTO.converterParaListaDTO(clientes));
+	public ResponseEntity<Page<ClienteDTO>> buscarTodos(@RequestParam(required = false) String nome,			                                            
+			                                            @PageableDefault(sort = "nome",
+			                                                             direction = Direction.ASC,
+			                                                             page = 0,
+			                                                             size = 20)
+	                                                    Pageable paginacao) {
+		if(nome == null) {
+			Page<Cliente> clientes = clienteService.buscarTodos(paginacao);
+			return ResponseEntity.ok(ClienteDTO.converterParaListaDTO(clientes));			
+		}else {
+			Page<Cliente> clientes = clienteService.buscarPorNome(nome, paginacao);
+			return ResponseEntity.ok(ClienteDTO.converterParaListaDTO(clientes));	
+		}
 	}
 
 	@DeleteMapping("/{id}")
@@ -89,6 +103,15 @@ public class ClienteController {
 	public ResponseEntity<ClienteDetalhadoDTO> atualizar(@RequestBody @Valid ClienteAtualizacaoForm clienteForm,
 			                                            @PathVariable Long id) {		
 		Optional<Cliente> cliente = clienteService.atualizar(id,clienteForm);
+		if(cliente.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(new ClienteDetalhadoDTO(cliente.get()));
+	}
+	
+	@GetMapping("/cpf/")
+	public ResponseEntity<ClienteDetalhadoDTO> buscarPorCpf(@PathVariable String cpf){
+		Optional<Cliente> cliente = clienteService.buscarClientePorCpf(cpf);
 		if(cliente.isEmpty()) {
 			return ResponseEntity.notFound().build();
 		}

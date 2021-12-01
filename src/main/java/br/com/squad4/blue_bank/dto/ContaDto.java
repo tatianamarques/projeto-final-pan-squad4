@@ -4,115 +4,104 @@ import br.com.squad4.blue_bank.enums.TipoConta;
 import br.com.squad4.blue_bank.model.Cliente;
 
 import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class ContaDto {
 
-   private Long agenciaId;
+	private Long agenciaId;
+	private Long clienteId;
+	private String numero;
+	@Enumerated(EnumType.STRING)
+	private TipoConta tipoConta;
+	private BigDecimal saldo;
+	private BigDecimal saldoEspecial;
+	private boolean estaBloqueada;
+	private String senha;
 
-    private Long clienteId;
+	private LocalDate dataAbertura;
 
+	public ContaDto(Long agenciaId, Long clienteId, String numero, TipoConta tipoConta, BigDecimal saldo,
+			BigDecimal saldoEspecial, boolean estaBloqueada, String senha, LocalDate dataAbertura) {
+		this.agenciaId = agenciaId;
+		this.clienteId = clienteId;
+		this.numero = numero;
+		this.tipoConta = tipoConta;
+		this.saldo = saldo;
+		this.saldoEspecial = saldoEspecial;
+		this.estaBloqueada = estaBloqueada;
+		this.senha = senha;
+		this.dataAbertura = dataAbertura;
+	}
 
-    private String numero;
+	public Long getClienteId() {
+		return clienteId;
+	}
 
+	public void setClienteId(Long clienteId) {
+		this.clienteId = clienteId;
+	}
 
-    private TipoConta tipoConta;
+	public String getNumero() {
+		return numero;
+	}
 
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
 
-    private BigDecimal saldo;
+	public TipoConta getTipoConta() {
+		return tipoConta;
+	}
 
+	public void setTipoConta(TipoConta tipoConta) {
+		this.tipoConta = tipoConta;
+	}
 
-    private BigDecimal saldoEspecial;
+	public BigDecimal getSaldo() {
+		return saldo;
+	}
 
+	public void setSaldo(BigDecimal saldo) {
+		this.saldo = saldo;
+	}
 
-    private boolean estaBloqueada;
+	public BigDecimal getSaldoEspecial() {
+		return saldoEspecial;
+	}
 
+	public void setSaldoEspecial(BigDecimal saldoEspecial) {
+		this.saldoEspecial = saldoEspecial;
+	}
 
-    private String senha;
+	public boolean isEstaBloqueada() {
+		return estaBloqueada;
+	}
 
+	public void setEstaBloqueada(boolean estaBloqueada) {
+		this.estaBloqueada = estaBloqueada;
+	}
 
-    private LocalDate dataAbertura;
+	public String getSenha() {
+		return senha;
+	}
 
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
-    public ContaDto(Long agenciaId,Long clienteId, String numero, TipoConta tipoConta, BigDecimal saldo, BigDecimal saldoEspecial, boolean estaBloqueada, String senha, LocalDate dataAbertura) {
-        this.agenciaId= agenciaId;
-        this.clienteId = clienteId;
-        this.numero = numero;
-        this.tipoConta = tipoConta;
-        this.saldo = saldo;
-        this.saldoEspecial = saldoEspecial;
-        this.estaBloqueada = estaBloqueada;
-        this.senha = senha;
-        this.dataAbertura = dataAbertura;
-    }
+	public LocalDate getDataAbertura() {
+		return dataAbertura;
+	}
 
-    public Long getClienteId() {
-        return clienteId;
-    }
+	public Long getAgenciaId() {
+		return agenciaId;
+	}
 
-    public void setClienteId(Long clienteId) {
-        this.clienteId = clienteId;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    public TipoConta getTipoConta() {
-        return tipoConta;
-    }
-
-    public void setTipoConta(TipoConta tipoConta) {
-        this.tipoConta = tipoConta;
-    }
-
-    public BigDecimal getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(BigDecimal saldo) {
-        this.saldo = saldo;
-    }
-
-    public BigDecimal getSaldoEspecial() {
-        return saldoEspecial;
-    }
-
-    public void setSaldoEspecial(BigDecimal saldoEspecial) {
-        this.saldoEspecial = saldoEspecial;
-    }
-
-    public boolean isEstaBloqueada() {
-        return estaBloqueada;
-    }
-
-    public void setEstaBloqueada(boolean estaBloqueada) {
-        this.estaBloqueada = estaBloqueada;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public LocalDate getDataAbertura() {
-        return dataAbertura;
-    }
-
-    public Long getAgenciaId() {
-        return agenciaId;
-    }
-
-    public void setDataAbertura(LocalDate dataAbertura) {
-        this.dataAbertura = dataAbertura;
-    }
+	public void setDataAbertura(LocalDate dataAbertura) {
+		this.dataAbertura = dataAbertura;
+	}
 }

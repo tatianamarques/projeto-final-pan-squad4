@@ -1,11 +1,12 @@
 package br.com.squad4.blue_bank.services;
 
-import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.com.squad4.blue_bank.form.ClienteAtualizacaoForm;
@@ -32,8 +33,12 @@ public class ClienteService {
 		return clienteExiste(id);
 	}
 
-	public List<Cliente> buscarTodos() {
-		return clienteRepository.findAll();
+	public Page<Cliente> buscarPorNome(String nome, Pageable paginacao) {
+		return clienteRepository.findByNomeContainingIgnoreCase(nome, paginacao);
+	}
+
+	public Page<Cliente> buscarTodos(Pageable paginacao) {
+		return clienteRepository.findAll(paginacao);
 	}
 
 	@Transactional
@@ -77,5 +82,12 @@ public class ClienteService {
 		return Optional.empty();
 	}
 
-	
+	public Optional<Cliente> buscarClientePorCpf(String cpf) {
+		Optional<Cliente> cliente = clienteRepository.findByCpf(cpf);
+		if (cliente.isEmpty()) {
+			return Optional.empty();
+		}
+		return cliente;
+	}
+
 }

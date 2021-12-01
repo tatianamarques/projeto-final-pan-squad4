@@ -1,7 +1,8 @@
 package br.com.squad4.blue_bank.dto;
 import java.io.Serializable;
-import java.util.List;
-import java.util.stream.Collectors;
+
+import org.springframework.data.domain.Page;
+
 import br.com.squad4.blue_bank.model.Cliente;
 import br.com.squad4.blue_bank.utils.Formatacoes;
 public class ClienteDTO implements Serializable{
@@ -29,8 +30,8 @@ public class ClienteDTO implements Serializable{
 	public String getCpf() {
 		return cpf;
 	}
-	public static List<ClienteDTO> converterParaListaDTO(List<Cliente> clientes) {
+	public static Page<ClienteDTO> converterParaListaDTO(Page<Cliente> clientes) {
 		
-		return clientes.stream().map(ClienteDTO::new).collect(Collectors.toList());
+		return clientes.map(ClienteDTO::new);
 	}
 }

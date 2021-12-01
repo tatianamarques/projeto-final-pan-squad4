@@ -9,7 +9,7 @@ import br.com.squad4.blue_bank.enums.TipoTelefone;
 public class Telefone {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
@@ -23,8 +23,6 @@ public class Telefone {
     private TipoTelefone tipoTelefone;
 
     @ManyToOne
-    @JoinColumn(name="CLIENTE_ID")
-    @NotNull(message = "COLUNA CLIENTE_ID NAO PODE ESTAR VAZIA!")
     private Cliente cliente;
     
 
