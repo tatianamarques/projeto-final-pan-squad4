@@ -32,8 +32,8 @@ public class ContaDetalhadaDTO {
 
 
     public ContaDetalhadaDTO(Conta conta) {
-   
-        numeroAgencia = conta.getAgencia().getNumero();
+
+        numeroAgencia = conta.getAgencia().getNumeroAgencia();
         clienteDTO = new ClienteDTO(conta.getCliente()) ;
         numero = conta.getNumero();
         tipoConta = conta.getTipoConta();

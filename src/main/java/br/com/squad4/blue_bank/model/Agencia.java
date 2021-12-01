@@ -16,7 +16,7 @@ public class Agencia {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String numero;
+    private String numeroAgencia;
 
     @Embedded
     private TelefoneAgencia telefone;
@@ -28,10 +28,10 @@ public class Agencia {
 	@OneToMany(mappedBy = "agencia")
 	private List<Conta> contas = new ArrayList<>();
 
-	public Agencia(String numero, TelefoneAgencia telefone, EnderecoAgencia endereco) {
-		this.numero = numero;
-		this.telefone = telefone;
+	public Agencia(String numeroAgencia, EnderecoAgencia endereco, TelefoneAgencia telefone) {
+		this.numeroAgencia = numeroAgencia;
 		this.endereco = endereco;
+		this.telefone = telefone;
 	}
  
 	public Agencia(){}
@@ -40,8 +40,8 @@ public class Agencia {
 		return id;
 	}
 
-	public String getNumero() {
-		return numero;
+	public String getNumeroAgencia() {
+		return numeroAgencia;
 	}
 
 	public TelefoneAgencia getTelefone() {
@@ -60,8 +60,8 @@ public class Agencia {
 		this.id = id;
 	}
 
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setNumeroAgencia(String numeroAgencia) {
+		this.numeroAgencia = numeroAgencia;
 	}
 
 	public void setTelefone(TelefoneAgencia telefone) {

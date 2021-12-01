@@ -5,7 +5,17 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 
 import br.com.squad4.blue_bank.enums.TipoConta;
 
@@ -31,6 +41,7 @@ public class Conta {
     private String numero;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private TipoConta tipoConta;
 
     @Column(nullable = false)

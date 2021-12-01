@@ -26,7 +26,7 @@ public class AgenciaController {
     public ResponseEntity<AgenciaDTO>criarAgencia(@RequestBody @Valid AgenciaDTO request){
         List<Agencia> lista = agenciaService.buscarAgencias();
         for (Agencia agencia : lista){
-            if(agencia.getNumero().equals(request.getNumero())){
+            if(agencia.getNumeroAgencia().equals(request.getNumeroAgencia())){
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
             }
         }
@@ -61,11 +61,11 @@ public class AgenciaController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/conta/{numero}")
-    public ResponseEntity<AgenciaDTO> buscarPorNumero(@PathVariable String numero){
+    @GetMapping("/conta/{numeroAgencia}")
+    public ResponseEntity<AgenciaDTO> buscarPorNumero(@PathVariable String numeroAgencia){
         List<Agencia> lista = agenciaService.buscarAgencias();
         for(Agencia agencia: lista){
-            if(agencia.getNumero().equals(numero)){
+            if(agencia.getNumeroAgencia().equals(numeroAgencia)){
                 return ResponseEntity.ok(new AgenciaDTO(agencia));
             }
         }
