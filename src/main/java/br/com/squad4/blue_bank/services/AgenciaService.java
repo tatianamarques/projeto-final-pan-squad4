@@ -23,7 +23,7 @@ public class AgenciaService {
     public Optional<Agencia> editar(AgenciaDTO agenciaDTO, Long id) {
         Optional<Agencia> agencia = agenciaRepository.findById(id);
         if (agencia.isPresent()) {
-            agencia.get().setNumero(agenciaDTO.getNumero());
+            agencia.get().setNumeroAgencia(agenciaDTO.getNumeroAgencia());
             agencia.get().setEndereco(agenciaDTO.getEnderecoDTO().toModel());
             agencia.get().setTelefone(agenciaDTO.getTelefoneDTO().toModel());
             return agencia;
@@ -45,9 +45,9 @@ public class AgenciaService {
     }
 
 
-    public Agencia buscarPorNumero(String numero, List<Agencia> agencias){
+    public Agencia buscarPorNumero(String numeroAgencia, List<Agencia> agencias){
         for(Agencia agencia : agencias){
-            if(agencia.getNumero().equals(numero)){
+            if(agencia.getNumeroAgencia().equals(numeroAgencia)){
                 return agencia;
             }
         }

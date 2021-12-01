@@ -14,9 +14,9 @@ public class TelefoneAgencia {
 	@Enumerated(EnumType.STRING)
 	private TipoTelefone tipoTelefone;
 	
-	public TelefoneAgencia(String numero, String ddd, TipoTelefone tipoTelefone) {
-		this.numeroTelefone = numero;
+	public TelefoneAgencia(String ddd, String numero, TipoTelefone tipoTelefone) {
 		this.ddd = ddd;
+		this.numeroTelefone = numero;
 		this.tipoTelefone = tipoTelefone;
 	}
 
@@ -33,6 +33,8 @@ public class TelefoneAgencia {
 	public TipoTelefone getTipoTelefone() {
 		return tipoTelefone;
 	}
+
+
 
 
 }
