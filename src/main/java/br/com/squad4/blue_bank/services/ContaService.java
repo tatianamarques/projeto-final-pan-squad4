@@ -9,6 +9,8 @@ import br.com.squad4.blue_bank.repository.ClienteRepository;
 import br.com.squad4.blue_bank.repository.ContaRepository;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javassist.tools.rmi.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,7 +39,7 @@ public class ContaService {
             return repository.save(conta);
     }
 
-
+    @JsonBackReference
     public Conta find(Long id) throws ObjectNotFoundException {
         Optional<Conta> conta = repository.findById(id);
         return conta.orElseThrow(() -> new ObjectNotFoundException(

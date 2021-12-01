@@ -1,5 +1,9 @@
 package br.com.squad4.blue_bank.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -30,9 +34,10 @@ public class Cliente {
 
     @Column(nullable = false, unique = true)
     private String email;
-    
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "cliente")
-    private List<Conta> contas;
+
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Conta> contas = new ArrayList<>();
 
 
     

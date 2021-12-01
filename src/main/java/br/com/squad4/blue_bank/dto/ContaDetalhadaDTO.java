@@ -1,8 +1,6 @@
 package br.com.squad4.blue_bank.dto;
 
 import br.com.squad4.blue_bank.enums.TipoConta;
-import br.com.squad4.blue_bank.model.Agencia;
-import br.com.squad4.blue_bank.model.Cliente;
 import br.com.squad4.blue_bank.model.Conta;
 import java.math.BigDecimal;
 
@@ -11,10 +9,10 @@ import java.math.BigDecimal;
 public class ContaDetalhadaDTO {
 
 
-        private Agencia agencia;
+        //private AgenciaDTO agenciaDTO;
+        private String numeroAgencia;
 
-
-        private Cliente cliente;
+        private ClienteDTO clienteDTO;
 
 
 
@@ -34,8 +32,9 @@ public class ContaDetalhadaDTO {
 
 
     public ContaDetalhadaDTO(Conta conta) {
-        agencia = conta.getAgencia();
-        cliente = conta.getCliente();
+   
+        numeroAgencia = conta.getAgencia().getNumero();
+        clienteDTO = new ClienteDTO(conta.getCliente()) ;
         numero = conta.getNumero();
         tipoConta = conta.getTipoConta();
         saldo = conta.getSaldo();
@@ -43,12 +42,12 @@ public class ContaDetalhadaDTO {
         estaBloqueada = conta.isEstaBloqueada();
     }
 
-    public Agencia getAgencia() {
-        return agencia;
-    }
+    /*public AgenciaDTO getAgenciaDTO() {
+        return agenciaDTO;
+    }*/
 
-    public Cliente getCliente() {
-        return cliente;
+    public ClienteDTO getClienteDTO() {
+        return clienteDTO;
     }
 
     public String getNumero() {
@@ -69,5 +68,9 @@ public class ContaDetalhadaDTO {
 
     public boolean isEstaBloqueada() {
         return estaBloqueada;
+    }
+
+    public String getNumeroAgencia() {
+        return numeroAgencia;
     }
 }
