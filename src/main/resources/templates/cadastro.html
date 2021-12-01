@@ -32,29 +32,29 @@
 
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form action="#" th:action="@{/register.html}" method="post" th:object="${cliente}">
 
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="nomeCompleto" placeholder=" " type="text"/>
+                                        <input class="form-control" id="nomeCompleto" placeholder=" " type="text" th:field="*{nome}"/>
                                         <label for="nomeCompleto">Nome Completo</label>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="cpf" placeholder="CPF" type="text"/>
+                                                <input class="form-control" id="cpf" placeholder="CPF" type="text" th:field="*{cpf}"/>
                                                 <label for="cpf">CPF</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="datnasc" placeholder=" " type="date"/>
+                                                <input class="form-control" id="datnasc" placeholder=" " type="date" th:field="*{dataNascimento}"/>
                                                 <label for="datnasc">Data de Nascimento</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="inputEmail" placeholder="name@example.com"
-                                               type="email"/>
+                                               type="email" th:field="*{email}"/>
                                         <label for="inputEmail">Email</label>
                                     </div>
 
@@ -62,14 +62,14 @@
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
                                                 <input class="form-control" id="telefone1" placeholder="Informe seu telefone"
-                                                       type="text"/>
+                                                       type="text" th:field="*{telefones}"/>
                                                 <label for="telefone1">Telefone 1</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input class="form-control" id="telefone2" placeholder="Informe seu telefone"
-                                                       type="text"/>
+                                                       type="text" th:field="*{telefones}"/>
                                                 <label for="telefone2">Telefone 2</label>
                                             </div>
                                         </div>
@@ -145,7 +145,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-4 mb-0">
-                                        <div class="d-grid"><a class="btn btn-primary btn-block" href="#">Criar
+                                        <div class="d-grid"><a class="btn btn-primary btn-block" href="#" type="submit">Criar
                                             Conta</a></div>
                                     </div>
                                 </form>
