@@ -1,5 +1,6 @@
 package br.com.squad4.blue_bank.services;
 
+import br.com.squad4.blue_bank.dto.ContaDetalhadaDTO;
 import br.com.squad4.blue_bank.dto.ContaDto;
 import br.com.squad4.blue_bank.model.Agencia;
 import br.com.squad4.blue_bank.model.Cliente;
@@ -15,6 +16,7 @@ import javassist.tools.rmi.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -44,6 +46,10 @@ public class ContaService {
         Optional<Conta> conta = repository.findById(id);
         return conta.orElseThrow(() -> new ObjectNotFoundException(
                 "Conta não encontrado! Id: " + id + ", Tipo: " + Conta.class.getName()));
+    }
+
+    public List<Conta> buscarContas() {
+        return repository.findAll();
     }
 
 }

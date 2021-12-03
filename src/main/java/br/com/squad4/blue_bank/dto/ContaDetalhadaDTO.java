@@ -3,7 +3,8 @@ package br.com.squad4.blue_bank.dto;
 import br.com.squad4.blue_bank.enums.TipoConta;
 import br.com.squad4.blue_bank.model.Conta;
 import java.math.BigDecimal;
-
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class ContaDetalhadaDTO {
@@ -40,6 +41,12 @@ public class ContaDetalhadaDTO {
         saldo = conta.getSaldo();
         saldoEspecial = conta.getSaldoEspecial();
         estaBloqueada = conta.isEstaBloqueada();
+
+
+    }
+
+    public static List<ContaDetalhadaDTO> toModel(List<Conta>contas){
+        return contas.stream().map(ContaDetalhadaDTO::new).collect(Collectors.toList());
     }
 
     /*public AgenciaDTO getAgenciaDTO() {
