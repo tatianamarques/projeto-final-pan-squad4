@@ -24,6 +24,28 @@ public class ContaDto {
 
 	private LocalDate dataAbertura;
 
+    
+    public Boolean receberDinheiro(BigDecimal quantia) {
+    	try {
+    		this.saldo=saldo.add(quantia);
+    		return true;
+    	}catch( Exception e){
+    		e.printStackTrace();
+    		return false;
+    	}
+    }
+    
+    public Boolean cederDinheiro(BigDecimal quantia) {
+    	try {
+    		this.saldo = saldo.subtract(quantia);
+    		return true;
+    	}catch( Exception e){
+    		e.printStackTrace();
+    		return false;
+    	}
+    	
+    }
+	
 	public ContaDto(Long agenciaId, Long clienteId, String numero, TipoConta tipoConta, BigDecimal saldo,
 			BigDecimal saldoEspecial, boolean estaBloqueada, String senha, LocalDate dataAbertura) {
 		this.agenciaId = agenciaId;
