@@ -141,6 +141,27 @@ public class Conta {
     public void setAgencia(Agencia agencia) {
         this.agencia = agencia;
     }
+    
+    public Boolean receberDinheiro(BigDecimal quantia) {
+    	try {
+    		this.saldo=saldo.add(quantia);
+    		return true;
+    	}catch( Exception e){
+    		e.printStackTrace();
+    		return false;
+    	}
+    }
+    
+    public Boolean cederDinheiro(BigDecimal quantia) {
+    	try {
+    		this.saldo = saldo.subtract(quantia);
+    		return true;
+    	}catch( Exception e){
+    		e.printStackTrace();
+    		return false;
+    	}
+    	
+    }
 
     @Override
 	public int hashCode() {
