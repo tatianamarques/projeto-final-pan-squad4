@@ -32,7 +32,7 @@
 
                             </div>
                             <div class="card-body">
-                                <form action="#" th:action="@{/register.html}" method="post" th:object="${cliente}">
+                                <form action="#" th:action="@{/cadastro.html}" method="post" th:object="${cliente}">
 
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="nomeCompleto" placeholder=" " type="text" th:field="*{nome}"/>
@@ -145,8 +145,9 @@
                                         </div>
                                     </div>
                                     <div class="mt-4 mb-0">
-                                        <div class="d-grid"><a class="btn btn-primary btn-block" href="#" type="submit">Criar
-                                            Conta</a></div>
+<!--                                        <div class="d-grid"><a class="btn btn-primary btn-block" href="/cadastro.html" input type="submit">Criar-->
+<!--                                            Conta</a></div>-->
+                                        <p ><input type="submit" value="Criar conta" class="btn btn-primary btn-block" href="/cadastro.html" /> </p>
                                     </div>
                                 </form>
                             </div>
