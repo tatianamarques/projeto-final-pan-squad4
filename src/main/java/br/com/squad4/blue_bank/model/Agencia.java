@@ -15,7 +15,7 @@ public class Agencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "numero_agencia", nullable = false, unique = true)
     private String numeroAgencia;
 
     @Embedded
@@ -23,7 +23,6 @@ public class Agencia {
     
     @Embedded
     private EnderecoAgencia endereco;
-
 
 	@OneToMany(mappedBy = "agencia")
 	private List<Conta> contas = new ArrayList<>();
@@ -33,7 +32,8 @@ public class Agencia {
 		this.endereco = endereco;
 		this.telefone = telefone;
 	}
- 
+
+
 	public Agencia(){}
 
 	public Long getId() {
@@ -72,8 +72,6 @@ public class Agencia {
 		this.endereco = endereco;
 	}
 
-	public void setContas(List<Conta> contas) {
-		this.contas = contas;
-	}
+	public void setContas(List<Conta> contas) {this.contas = contas;}
 
 }

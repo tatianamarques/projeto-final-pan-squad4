@@ -1,8 +1,10 @@
 package br.com.squad4.blue_bank.dto;
 
 import br.com.squad4.blue_bank.model.Agencia;
+import br.com.squad4.blue_bank.model.Cliente;
 import br.com.squad4.blue_bank.model.EnderecoAgencia;
 import br.com.squad4.blue_bank.model.TelefoneAgencia;
+import org.springframework.data.domain.Page;
 
 public class AgenciaDTO {
 
@@ -27,7 +29,10 @@ public class AgenciaDTO {
         return agencia;
     }
 
+    public static Page<AgenciaDTO> converterParaListaDTO(Page<Agencia> agencias) {
 
+        return agencias.map(AgenciaDTO::new);
+    }
 
     public String getNumeroAgencia() {
         return numeroAgencia;
