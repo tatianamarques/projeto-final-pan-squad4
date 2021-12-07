@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 
 public class SNSConfig {
-    public static final String SECRET_KEY = "jD40S+mj8kHcbinVcpc9yRMGvgknB4yr76f+jQpP";
-    public static final String ACCESS_KEY = "AKIA6BZRT7L45VC3AO7L";
+    public static final String SECRET_KEY = "";
+    public static final String ACCESS_KEY = "";
 
     @Primary
     @Bean

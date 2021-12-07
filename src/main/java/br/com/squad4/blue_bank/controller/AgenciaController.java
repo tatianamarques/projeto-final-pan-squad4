@@ -1,12 +1,9 @@
 package br.com.squad4.blue_bank.controller;
 
 import br.com.squad4.blue_bank.dto.AgenciaDTO;
-import br.com.squad4.blue_bank.dto.ClienteDTO;
-import br.com.squad4.blue_bank.dto.ClienteDetalhadoDTO;
-import br.com.squad4.blue_bank.form.ClienteAtualizacaoForm;
+import br.com.squad4.blue_bank.dto.EnderecoAgenciaDTO;
 import br.com.squad4.blue_bank.model.Agencia;
-import br.com.squad4.blue_bank.model.Cliente;
-import br.com.squad4.blue_bank.repository.AgenciaRepository;
+import br.com.squad4.blue_bank.model.EnderecoAgencia;
 import br.com.squad4.blue_bank.services.AgenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,7 +13,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.transaction.Transactional;
