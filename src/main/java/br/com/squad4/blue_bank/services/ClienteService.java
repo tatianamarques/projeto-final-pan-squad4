@@ -21,6 +21,7 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository clienteRepository;
 
+
 	@Autowired
 	private EnderecoRepository enderecoRepository;
 
@@ -44,8 +45,9 @@ public class ClienteService {
 	@Transactional
 	public boolean deletar(Long id) {
 		Optional<Cliente> cliente = buscarPorId(id);
-		if (cliente.isPresent()) {
-			clienteRepository.deleteById(id);
+		if (cliente.isPresent()) {			
+			//clienteRepository.deleteById(id);
+			cliente.get().setAtivo(false);
 			return true;
 		}
 		return false;
@@ -73,6 +75,10 @@ public class ClienteService {
 		}
 
 	}
+	
+	public Page<Cliente> buscarTodosInativos(Pageable pageable){
+		return clienteRepository.findAllInativos(pageable);
+	}
 
 	private Optional<Cliente> clienteExiste(Long id) {
 		Optional<Cliente> cliente = clienteRepository.findById(id);
@@ -89,5 +95,5 @@ public class ClienteService {
 		}
 		return cliente;
 	}
-
+	
 }

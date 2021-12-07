@@ -12,6 +12,13 @@ import br.com.squad4.blue_bank.model.Cliente;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+	
+	@Query (value = "SELECT c FROM Cliente as c WHERE c.ativo = true")
+	Page<Cliente> findAll(Pageable pageable);
+	
+	@Query (value = "SELECT c FROM Cliente as c WHERE c.ativo = false")
+	Page<Cliente> findAllInativos(Pageable pageable);
+	
     @Override
     Optional<Cliente> findById(Long id);
     

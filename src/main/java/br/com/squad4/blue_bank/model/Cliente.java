@@ -1,9 +1,5 @@
 package br.com.squad4.blue_bank.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -38,10 +34,11 @@ public class Cliente {
 
     @OneToMany(mappedBy = "cliente")
     private List<Conta> contas = new ArrayList<>();
-
-
     
-    public Cliente() {
+    private boolean ativo;
+    
+
+	public Cliente() {
 	}
 
     public Cliente(String nome, String cpf, Endereco endereco, LocalDate dataNascimento, String email, Telefone telefone) {
@@ -51,9 +48,12 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
         this.email = email;
         adicionarTelefone(telefone);
-
+        this.ativo = true;
     }
 
+    public List<Conta> getContas() {
+    	return contas;
+    }
  
 
 	public Long getId() {
@@ -118,4 +118,12 @@ public class Cliente {
         this.id = id;
     }
 
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+    
 }
