@@ -2,6 +2,7 @@ package br.com.squad4.blue_bank.services;
 
 import br.com.squad4.blue_bank.dto.AgenciaDTO;
 import br.com.squad4.blue_bank.model.Agencia;
+import br.com.squad4.blue_bank.model.EnderecoAgencia;
 import br.com.squad4.blue_bank.repository.AgenciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -61,6 +62,7 @@ public class AgenciaService {
     public Page<Agencia> buscarPorNumero(String numeroAgencia, Pageable paginacao) {
         return agenciaRepository.findByNumeroAgenciaContainingIgnoreCase(numeroAgencia, paginacao);
     }
+
     public Optional<Agencia> buscarPorNumero(String numeroAgencia) {
         Optional<Agencia> agencia = agenciaRepository.findByNumeroAgencia(numeroAgencia);
         if (agencia.isEmpty()) {

@@ -32,27 +32,12 @@ public class AgenciaController {
     @Autowired
     private AgenciaService agenciaService;
 
-//    @Transactional
-//    @PostMapping
-//    public ResponseEntity<AgenciaDTO>criarAgencia(@RequestBody @Valid AgenciaDTO request,
-//                                                  UriComponentsBuilder builder){
-//        List<Agencia> lista = agenciaService.buscarAgencias();
-//        for (Agencia agencia : lista){
-//            if(agencia.getNumeroAgencia().equals(request.getNumeroAgencia())){
-//                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-//            }
-//        }
-//        Agencia agencia = agenciaService.salvar(request);
-//        URI uri = builder.path("/agencia/{id}").buildAndExpand(agencia.getId()).toUri();
-//        return ResponseEntity.created(uri).body(new AgenciaDTO(agencia));
-//    }
-
     @Transactional
     @PostMapping
     public Object criarAgencia(@RequestBody @Valid AgenciaDTO request,
                                UriComponentsBuilder builder){
         List<Agencia> lista = agenciaService.buscarAgencias();
-        String erro = "já existe agencia com esse número, tente novamente";
+        String erro = "Já existe agencia com esse número, tente novamente";
         for (Agencia agencia : lista){
             if(agencia.getNumeroAgencia().equals(request.getNumeroAgencia())){
                 return erro;

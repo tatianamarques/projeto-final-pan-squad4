@@ -70,6 +70,32 @@ public class EnderecoAgencia {
 	public String getBairro() {
 		return bairro;
 	}
-	
-	
+
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+
+	public void setNumeroEndereco(String numeroEndereco) {
+		this.numeroEndereco = numeroEndereco;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public void setUf(UF uf) {
+		this.uf = uf;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
 }
