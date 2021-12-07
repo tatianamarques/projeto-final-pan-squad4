@@ -1,6 +1,9 @@
 package br.com.squad4.blue_bank.controller;
 
+import br.com.squad4.blue_bank.form.ClienteForm;
 import br.com.squad4.blue_bank.model.Cliente;
+import br.com.squad4.blue_bank.repository.ClienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +37,20 @@ public class HomeController {
     public String crudclientes() {
         return "crudclientes";
 
+    }
+
+    @Autowired
+    private ClienteRepository clienteRepository;
+
+    @RequestMapping(method= RequestMethod.GET, value = "/cadastrocliente")
+    public String inicio(){
+        return "templates/cadastro.html";
+    }
+
+    @RequestMapping(method=RequestMethod.POST, value="/salvarcliente")
+    public String salvar(Cliente cliente){
+        clienteRepository.save(cliente);
+        return "templates/cadastro.html";
     }
 
 

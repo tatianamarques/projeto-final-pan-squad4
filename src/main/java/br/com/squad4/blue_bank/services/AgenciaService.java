@@ -4,6 +4,8 @@ import br.com.squad4.blue_bank.dto.AgenciaDTO;
 import br.com.squad4.blue_bank.model.Agencia;
 import br.com.squad4.blue_bank.repository.AgenciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -14,6 +16,7 @@ public class AgenciaService {
     @Autowired
     private AgenciaRepository agenciaRepository;
 
+
     public Agencia salvar(AgenciaDTO agenciaDTO) {
 
         return agenciaRepository.save(agenciaDTO.toModel());
@@ -23,7 +26,6 @@ public class AgenciaService {
     public Optional<Agencia> editar(AgenciaDTO agenciaDTO, Long id) {
         Optional<Agencia> agencia = agenciaRepository.findById(id);
         if (agencia.isPresent()) {
-            agencia.get().setNumeroAgencia(agenciaDTO.getNumeroAgencia());
             agencia.get().setEndereco(agenciaDTO.getEnderecoDTO().toModel());
             agencia.get().setTelefone(agenciaDTO.getTelefoneDTO().toModel());
             return agencia;
@@ -44,14 +46,29 @@ public class AgenciaService {
         return agenciaRepository.findAll();
     }
 
+    public Page<Agencia> buscarTodas(Pageable paginacao) {
+        return agenciaRepository.findAll(paginacao);
+    }
 
-    public Agencia buscarPorNumero(String numeroAgencia, List<Agencia> agencias){
-        for(Agencia agencia : agencias){
-            if(agencia.getNumeroAgencia().equals(numeroAgencia)){
-                return agencia;
-            }
+    private Optional<Agencia> agenciaExiste(Long id) {
+        Optional<Agencia> agencia = agenciaRepository.findById(id);
+        if (agencia.isPresent()) {
+            return agencia;
         }
-        return null;
+        return Optional.empty();
+    }
+
+
+    public Page<Agencia> buscarPorNumero(String numeroAgencia, Pageable paginacao) {
+        return agenciaRepository.findByNumeroAgenciaContainingIgnoreCase(numeroAgencia, paginacao);
+    }
+
+    public Optional<Agencia> buscarPorNumero(String numeroAgencia) {
+        Optional<Agencia> agencia = agenciaRepository.findByNumeroAgencia(numeroAgencia);
+        if (agencia.isEmpty()) {
+            return Optional.empty();
+        }
+        return agencia;
     }
 
 }
