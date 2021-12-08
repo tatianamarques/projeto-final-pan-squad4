@@ -141,7 +141,16 @@ public class Conta {
     public void setAgencia(Agencia agencia) {
         this.agencia = agencia;
     }
-    
+
+
+    public void setTipoConta(TipoConta tipoConta) {
+        this.tipoConta = tipoConta;
+    }
+
+    public void setEstaBloqueada(boolean estaBloqueada) {
+        this.estaBloqueada = estaBloqueada;
+    }
+
     public Boolean receberDinheiro(BigDecimal quantia) {
     	try {
     		this.saldo=saldo.add(quantia);
