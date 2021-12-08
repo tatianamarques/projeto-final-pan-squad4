@@ -16,6 +16,7 @@ public class AgenciaService {
     @Autowired
     private AgenciaRepository agenciaRepository;
 
+
     public Agencia salvar(AgenciaDTO agenciaDTO) {
 
         return agenciaRepository.save(agenciaDTO.toModel());
@@ -61,6 +62,7 @@ public class AgenciaService {
     public Page<Agencia> buscarPorNumero(String numeroAgencia, Pageable paginacao) {
         return agenciaRepository.findByNumeroAgenciaContainingIgnoreCase(numeroAgencia, paginacao);
     }
+
     public Optional<Agencia> buscarPorNumero(String numeroAgencia) {
         Optional<Agencia> agencia = agenciaRepository.findByNumeroAgencia(numeroAgencia);
         if (agencia.isEmpty()) {

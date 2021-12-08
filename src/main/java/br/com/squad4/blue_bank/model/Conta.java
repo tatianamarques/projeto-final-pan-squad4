@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -13,119 +12,132 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-
 import br.com.squad4.blue_bank.enums.TipoConta;
-
 
 @Entity
 public class Conta {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@ManyToOne
+	private Agencia agencia;
+
+	@ManyToOne
+	private Cliente cliente;
+
+	@Column(nullable = false, unique = true)
+	private String numero;
+
+	@Column(nullable = false)
+	@Enumerated(EnumType.STRING)
+	private TipoConta tipoConta;
+
+	@Column(nullable = false)
+	private BigDecimal saldo;
+
+	@Column
+	private BigDecimal saldoEspecial;
+
+	@Column(nullable = false)
+	private boolean estaBloqueada;
+
+	@Column(nullable = false)
+	private String senha;
+
+	@Column(nullable = false)
+	private LocalDate dataAbertura;
 
 
+	@OneToMany
+    @JoinTable(name = "conta_transacao", joinColumns = @JoinColumn(name = "conta_id", referencedColumnName = "id"),
+            inverseJoinColumns=@JoinColumn(name="transacao_id", referencedColumnName = "id"))
+	private List<Transacao> transacoes = new ArrayList<>();
 
-    @ManyToOne
-    private Agencia agencia;
+	@Deprecated
+	public Conta() {
+	}
 
+	public Conta(Agencia agencia, Cliente cliente, String numero, TipoConta tipoConta, BigDecimal saldo,
+			BigDecimal saldoEspecial, boolean estaBloqueada, String senha, LocalDate dataAbertura) {
+		this.agencia = agencia;
+		this.cliente = cliente;
+		this.numero = numero;
+		this.tipoConta = tipoConta;
+		this.saldo = saldo;
+		this.saldoEspecial = saldoEspecial;
+		this.estaBloqueada = estaBloqueada;
+		this.senha = senha;
+		this.dataAbertura = dataAbertura;
+	}
 
-    @ManyToOne
-    private Cliente cliente;
+	public void setId(Long id) {
+		this.id = id;
+	}
 
+	public Long getId() {
+		return id;
+	}
 
-    @Column(nullable = false, unique = true)
-    private String numero;
+	public Cliente getCliente() {
+		return cliente;
+	}
 
-    @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private TipoConta tipoConta;
+	public String getNumero() {
+		return numero;
+	}
 
-    @Column(nullable = false)
-    private BigDecimal saldo;
+	public TipoConta getTipoConta() {
+		return tipoConta;
+	}
 
-    @Column
-    private BigDecimal saldoEspecial;
+	public BigDecimal getSaldo() {
+		return saldo.add(this.saldoEspecial);
+	}
 
-    @Column(nullable = false)
-    private boolean estaBloqueada;
+	public BigDecimal getSaldoEspecial() {
+		return saldoEspecial;
+	}
 
-    @Column(nullable = false)
-    private String senha;
+	public boolean isEstaBloqueada() {
+		return estaBloqueada;
+	}
 
-    @Column(nullable = false)
-    private LocalDate dataAbertura;
-    
-    @OneToMany(mappedBy = "origem")
-    private List<Transferencia> origem;
-    
-    @OneToMany(mappedBy = "destino")
-    private List<Transferencia> destino;
+	public String getSenha() {
+		return senha;
+	}
 
-    @OneToMany
-//    @JoinTable(name = "conta_transacao", joinColumns = @JoinColumn(name = "conta_id", referencedColumnName = "id"),
-//            inverseJoinColumns=@JoinColumn(name="transacao_id", referencedColumnName = "id"))
-    private List<Transacao> transacoes = new ArrayList<>();
-    
+	public LocalDate getDataAbertura() {
+		return dataAbertura;
+	}
 
+	public List<Transacao> getTransacoes() {
+		return transacoes;
+	}
 
-    @Deprecated
-    public Conta(){}
+	public Agencia getAgencia() {
+		return agencia;
+	}
 
-    public Conta(Agencia agencia,Cliente cliente, String numero, TipoConta tipoConta, BigDecimal saldo, BigDecimal saldoEspecial, boolean estaBloqueada, String senha, LocalDate dataAbertura) {
-        this.agencia=agencia;
-        this.cliente =cliente;
-        this.numero = numero;
-        this.tipoConta = tipoConta;
-        this.saldo = saldo;
-        this.saldoEspecial = saldoEspecial;
-        this.estaBloqueada = estaBloqueada;
-        this.senha = senha;
-        this.dataAbertura = dataAbertura;
-    }
+	public void setAgencia(Agencia agencia) {
+		this.agencia = agencia;
+	}
 
+	public void depositar(BigDecimal quantia) {
+		this.saldo = saldo.add(quantia);
+	}
 
+	public void sacar(BigDecimal quantia) {
+		this.saldo = saldo.subtract(quantia);
+	}
 
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public TipoConta getTipoConta() {
-        return tipoConta;
-    }
-
-    public BigDecimal getSaldo() {
-        return saldo.add(this.saldoEspecial);
-    }
-
-    public BigDecimal getSaldoEspecial() {
-        return saldoEspecial;
-    }
-
-    public boolean isEstaBloqueada() {
-        return estaBloqueada;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
+<<<<<<< HEAD
     public LocalDate getDataAbertura() {
         return dataAbertura;
     }
@@ -173,6 +185,9 @@ public class Conta {
     }
 
     @Override
+=======
+	@Override
+>>>>>>> 0f858771f52acf674c142127bbb1349a070ae969
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -208,6 +223,5 @@ public class Conta {
 			return false;
 		return true;
 	}
-    
-    
+
 }

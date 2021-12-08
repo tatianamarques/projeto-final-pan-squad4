@@ -18,7 +18,7 @@ public class Formatacoes {
             mf.setValueContainsLiteralCharacters(false);
             return mf.valueToString(cpf);
         } catch (ParseException ex) {
-            return cpf;
+            return ex.getMessage();
         }	
 		
 	}
@@ -30,7 +30,7 @@ public class Formatacoes {
             mf.setValueContainsLiteralCharacters(false);
             return mf.valueToString(telefone);
         } catch (ParseException ex) {
-            return telefone;
+        	return ex.getMessage();
         }		
 	}
 	
@@ -41,7 +41,7 @@ public class Formatacoes {
             mf.setValueContainsLiteralCharacters(false);
             return mf.valueToString(telefone);
         } catch (ParseException ex) {
-            return telefone;
+        	return ex.getMessage();
         }	
 		
 	}
@@ -53,7 +53,19 @@ public class Formatacoes {
             mf.setValueContainsLiteralCharacters(false);
             return mf.valueToString(cep);
         } catch (ParseException ex) {
-            return cep;
+        	return ex.getMessage();
+        }	
+		
+	}
+	
+	public static String mascaraConta(String conta) {
+		MaskFormatter mf;
+        try {
+            mf = new MaskFormatter("#####-#");
+            mf.setValueContainsLiteralCharacters(false);
+            return mf.valueToString(conta);
+        } catch (ParseException ex) {
+        	return ex.getMessage();
         }	
 		
 	}

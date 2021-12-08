@@ -118,7 +118,10 @@ public class ClienteController {
 		return ResponseEntity.ok(new ClienteDetalhadoDTO(cliente.get()));
 	}
 	
-
+	@GetMapping("/inativos")
+	public ResponseEntity<Page<ClienteDTO>> buscarTodosClientesInativos(Pageable pageable){
+		return ResponseEntity.ok(ClienteDTO.converterParaListaDTO(clienteService.buscarTodosInativos(pageable)));
+	}
 	
 
 }
