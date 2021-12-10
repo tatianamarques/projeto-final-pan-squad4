@@ -1,2 +1,2 @@
 ##  💻 Sobre o projeto
-API  Rest  que permita gerenciar transções e cadastrar clientes.
+API  Rest  do banco  BlueBank  que gerencia transações  bancárias e cadastrar clientes.
