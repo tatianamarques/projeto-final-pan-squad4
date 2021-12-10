@@ -109,7 +109,7 @@ public class ClienteController {
 		return ResponseEntity.ok(new ClienteDetalhadoDTO(cliente.get()));
 	}
 	
-	@GetMapping("/cpf/")
+	@GetMapping("/cpf/{cpf}")
 	public ResponseEntity<ClienteDetalhadoDTO> buscarPorCpf(@PathVariable String cpf){
 		Optional<Cliente> cliente = clienteService.buscarClientePorCpf(cpf);
 		if(cliente.isEmpty()) {

@@ -32,7 +32,7 @@ INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf
 INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf,numero_agencia,ddd,numero_telefone,tipo_telefone) VALUES ('Zé Garoto', '24555-050', 'São Gonçalo', '', 'Praça Zé Garoto', '20', 'RJ', '132-5', '021', '20052005', 'COMERCIAL');
 INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf,numero_agencia,ddd,numero_telefone,tipo_telefone) VALUES ('Ipiiba', '24566-070', 'São Gonçalo', '', 'Estrada Meia Noite', '1204', 'RJ', '132-6', '021', '20052006', 'COMERCIAL');
 INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf,numero_agencia,ddd,numero_telefone,tipo_telefone) VALUES ('Soberbo', '25530-020', 'Teresópolis', '', 'Rua do Soberbo', '100', 'RJ', '132-7', '021', '20052007', 'COMERCIAL');
-INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf,numero_agencia,ddd,numero_telefone,tipo_telefone) VALUES ('Bar dos Cavaleiros', '23004-003', 'Duque de Caxias', '', 'Rua Couve', '202', 'RJ', '134-8', '021', '20052008', 'COMERCIAL');
+INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf,numero_agencia,ddd,numero_telefone,tipo_telefone) VALUES ('Bar dos Cavaleiros', '23004-003', 'Duque de Caxias', '', 'Rua Couve', '202', 'RJ', '132-8', '021', '20052008', 'COMERCIAL');
 INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf,numero_agencia,ddd,numero_telefone,tipo_telefone) VALUES ('Jardim da Penha', '29060-670', 'Vitória', '', 'Avenida Chico Anísio', '200', 'ES', '141-1', '027', '20062001', 'COMERCIAL');
 INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf,numero_agencia,ddd,numero_telefone,tipo_telefone) VALUES ('Itapoã', '29101-702', 'Vila Velha', '', 'Avenida Doutor Jair de Andrade', '307', 'ES', '141-2', '027', '20062002', 'COMERCIAL');
 INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf,numero_agencia,ddd,numero_telefone,tipo_telefone) VALUES ('Centro', '29200-340', 'Guarapari', 'Sala 202', 'Avenida Doutor Roberto Calmom', '140', 'ES', '141-3', '027', '20062003', 'COMERCIAL');
@@ -83,15 +83,20 @@ INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf
 
 INSERT INTO cliente (cpf,data_nascimento,email,nome,ativo) VALUES ('85953354002', '1979-03-25', 'jose@email.com', 'José da Silva Souza','true');
 INSERT INTO cliente (cpf,data_nascimento,email,nome,ativo) VALUES ('43491283019', '1984-09-11', 'ana@email.com', 'Ana Maria Braga','false');
+INSERT INTO cliente (cpf,data_nascimento,email,nome,ativo) VALUES ('41805146050', '1950-05-02', 'faustao@email.com', 'Fausto Correia da Silva','true');
 INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Alvorada', '98762123', 'Viana', 'casa', 'Rua Esmeralda', '12', 'ES', '1');
-INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Morumbi', '123456789', 'São Paulo', 'apto 1001', 'Rua Independência', '167', 'SP', '2');
+INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Morumbi', '12345789', 'São Paulo', 'apto 1001', 'Rua Independência', '167', 'SP', '2');
+INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Jardim Helena', '08090284', 'São Paulo', 'casa 13', 'Rua Selena', '155', 'SP', '3');
 
-INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('027', '11111-1111', 'CELULAR', '1');
-INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('027', '1111-2222', 'RESIDENCIAL', '1');
-INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('011', '22222-1111', 'CELULAR', '2');
-INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('011', '2222-2222', 'RESIDENCIAL', '2');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('027', '111111111', 'CELULAR', '1');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('027', '11112222', 'RESIDENCIAL', '1');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('011', '222221111', 'CELULAR', '2');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('011', '22222222', 'RESIDENCIAL', '2');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('011', '32222223', 'RESIDENCIAL', '3');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('011', '922222299', 'CELULAR', '3');
 
 INSERT INTO conta (data_abertura, esta_bloqueada, numero, saldo, saldo_especial, senha, tipo_conta, agencia_id, cliente_id) VALUES ('2021-01-19', 0,'1111-1', 2500, 0,'1234','CORRENTE', 1, 1);
 INSERT INTO conta (data_abertura, esta_bloqueada, numero, saldo, saldo_especial, senha, tipo_conta,agencia_id, cliente_id) VALUES ('2020-07-03', 0,'2222-2', 1500, 0,'1234','POUPANCA', 1, 2);
+INSERT INTO conta (data_abertura, esta_bloqueada, numero, saldo, saldo_especial, senha, tipo_conta,agencia_id, cliente_id) VALUES ('2020-07-03', 0,'2233-2', 1500, 0,'1234','POUPANCA', 2, 3);
 
 
