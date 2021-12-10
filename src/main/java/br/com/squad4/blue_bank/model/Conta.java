@@ -113,22 +113,6 @@ public class Conta {
 		return senha;
 	}
 
-	public LocalDate getDataAbertura() {
-		return dataAbertura;
-	}
-
-	public List<Transacao> getTransacoes() {
-		return transacoes;
-	}
-
-	public Agencia getAgencia() {
-		return agencia;
-	}
-
-	public void setAgencia(Agencia agencia) {
-		this.agencia = agencia;
-	}
-
 	public void depositar(BigDecimal quantia) {
 		this.saldo = saldo.add(quantia);
 	}
@@ -137,7 +121,6 @@ public class Conta {
 		this.saldo = saldo.subtract(quantia);
 	}
 
-<<<<<<< HEAD
     public LocalDate getDataAbertura() {
         return dataAbertura;
     }
@@ -185,9 +168,6 @@ public class Conta {
     }
 
     @Override
-=======
-	@Override
->>>>>>> 0f858771f52acf674c142127bbb1349a070ae969
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
