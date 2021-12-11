@@ -35,13 +35,13 @@ desempenho da consulta)
 
 - Buscar todas as agencia (utilizando DTO e paginação)
 
--Buscar agencia por número(utilizando DTO)
+- Buscar agencia por número(utilizando DTO)
 
 - Atualizar agência(utilizando DTO e validação)
 
 
 
- #### Conta-Controller
+  #### Conta-Controller
 
 - Cadastro de conta(utilizando validação).
 
