@@ -32,7 +32,7 @@
 
                             </div>
                             <div class="card-body">
-                                <form action="#" th:action="@{/cadastro.html}" method="post" th:object="${cliente}">
+                                <form action="#" th:action="@{/salvarcliente}" method="post" th:object="${cliente}">
 
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="nomeCompleto" placeholder=" " type="text" th:field="*{nome}"/>
@@ -47,7 +47,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="datnasc" placeholder=" " type="date" th:field="*{dataNascimento}"/>
+                                                <input class="form-control" id="datnasc" placeholder=" " type="text" th:field="*{dataNascimento}"
+                                                       onkeypress="mascaraData(this)"/>
                                                 <label for="datnasc">Data de Nascimento</label>
                                             </div>
                                         </div>
@@ -62,41 +63,41 @@
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
                                                 <input class="form-control" id="telefone1" placeholder="Informe seu telefone"
-                                                       type="text" th:field="*{telefones}"/>
+                                                       type="text" th:field="*{telefoneForm.ddd}"/>
                                                 <label for="telefone1">Telefone 1</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input class="form-control" id="telefone2" placeholder="Informe seu telefone"
-                                                       type="text" th:field="*{telefones}"/>
+                                                       type="text" th:field="*{telefoneForm.numero}"/>
                                                 <label for="telefone2">Telefone 2</label>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="logradouro" placeholder="Informe seu endereço"
+                                        <input class="form-control" id="logradouro" placeholder="Informe seu endereço" th:field="*{enderecoForm.logradouro}"
                                                type="text"/>
                                         <label for="logradouro">Logradouro</label>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-md-2">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="numerolog" placeholder="N" type="text"/>
+                                                <input class="form-control" id="numerolog" placeholder="N" type="text" th:field="*{enderecoForm.numero}"/>
                                                 <label for="numerolog">N</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="complemento" placeholder="Complemento"
+                                                <input class="form-control" id="complemento" placeholder="Complemento" th:field="*{enderecoForm.complemento}"
                                                        type="text"/>
                                                 <label for="complemento">Complemento</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="cep" placeholder="CEP" type="text"/>
+                                                <input class="form-control" id="cep" placeholder="CEP" type="text" th:field="*{enderecoForm.cep}"/>
                                                 <label for="cep">CEP</label>
                                             </div>
                                         </div>
@@ -106,21 +107,21 @@
                                     <div class="row mb-3">
                                         <div class="col-md-5">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="bairro" placeholder="Bairro"
+                                                <input class="form-control" id="bairro" placeholder="Bairro" th:field="*{enderecoForm.bairro}"
                                                        type="text"/>
                                                 <label for="bairro">Bairro</label>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="cidade" placeholder="Cidade"
+                                                <input class="form-control" id="cidade" placeholder="Cidade" th:field="*{enderecoForm.cidade}"
                                                        type="text"/>
                                                 <label for="cidade">Cidade</label>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="uf" placeholder="UF" type="text"/>
+                                                <input class="form-control" id="uf" placeholder="UF" type="text" th:field="*{enderecoForm.uf}"/>
                                                 <label for="uf">UF</label>
                                             </div>
                                         </div>
@@ -132,19 +133,22 @@
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
                                                 <input class="form-control" id="inputPassword" placeholder="Create a password"
-                                                       type="password"/>
+                                                       type="password" name="senha"/>
                                                 <label for="inputPassword">Senha</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputPasswordConfirm" placeholder="Confirm password"
+                                                <input class="form-control" id="inputPasswordConfirm" placeholder="Confirm password" name="senhac"
                                                        type="password"/>
                                                 <label for="inputPasswordConfirm">Confirme a senha</label>
+
+                                                <span th:text="${aviso}"></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="mt-4 mb-0">
+
 <!--                                        <div class="d-grid"><a class="btn btn-primary btn-block" href="/cadastro.html" input type="submit">Criar-->
 <!--                                            Conta</a></div>-->
                                         <p ><input type="submit" value="Criar conta" class="btn btn-primary btn-block" href="/cadastro.html" /> </p>
@@ -178,5 +182,79 @@
 <script crossorigin="anonymous"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/scripts.js"></script>
+
+<script>
+    function mascaraData(val) {
+  var pass = val.value;
+  var expr = /[0123456789]/;
+
+  for (i = 0; i < pass.length; i++) {
+    // charAt -> retorna o caractere posicionado no índice especificado
+    var lchar = val.value.charAt(i);
+    var nchar = val.value.charAt(i + 1);
+
+    if (i == 0) {
+      // search -> retorna um valor inteiro, indicando a posição do inicio da primeira
+      // ocorrência de expReg dentro de instStr. Se nenhuma ocorrencia for encontrada o método retornara -1
+      // instStr.search(expReg);
+      if ((lchar.search(expr) != 0) || (lchar > 3)) {
+        val.value = "";
+      }
+
+    } else if (i == 1) {
+
+      if (lchar.search(expr) != 0) {
+        // substring(indice1,indice2)
+        // indice1, indice2 -> será usado para delimitar a string
+        var tst1 = val.value.substring(0, (i));
+        val.value = tst1;
+        continue;
+      }
+
+      if ((nchar != '/') && (nchar != '')) {
+        var tst1 = val.value.substring(0, (i) + 1);
+
+        if (nchar.search(expr) != 0)
+          var tst2 = val.value.substring(i + 2, pass.length);
+        else
+          var tst2 = val.value.substring(i + 1, pass.length);
+
+        val.value = tst1 + '/' + tst2;
+      }
+
+    } else if (i == 4) {
+
+      if (lchar.search(expr) != 0) {
+        var tst1 = val.value.substring(0, (i));
+        val.value = tst1;
+        continue;
+      }
+
+      if ((nchar != '/') && (nchar != '')) {
+        var tst1 = val.value.substring(0, (i) + 1);
+
+        if (nchar.search(expr) != 0)
+          var tst2 = val.value.substring(i + 2, pass.length);
+        else
+          var tst2 = val.value.substring(i + 1, pass.length);
+
+        val.value = tst1 + '/' + tst2;
+      }
+    }
+
+    if (i >= 6) {
+      if (lchar.search(expr) != 0) {
+        var tst1 = val.value.substring(0, (i));
+        val.value = tst1;
+      }
+    }
+  }
+
+  if (pass.length > 10)
+    val.value = val.value.substring(0, 10);
+  return true;
+}
+</script>
+
 </body>
 </html>

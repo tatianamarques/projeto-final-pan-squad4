@@ -78,7 +78,20 @@ public class TelefoneForm {
 	public String toString() {
 		return "TelefoneForm [ddd=" + ddd + ", numero=" + numero + ", tipoTelefone=" + tipoTelefone +"]";
 	}
-	
-	
 
+	public void setDdd(String ddd) {
+		this.ddd = ddd;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public void setTipoTelefone(TipoTelefone tipoTelefone) {
+		this.tipoTelefone = tipoTelefone;
+	}
+
+	public void setIdCliente(Long idCliente) {
+		this.idCliente = idCliente;
+	}
 }
