@@ -20,17 +20,26 @@ public class Cliente {
 
     @Column(nullable = false)
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
-    private List<Telefone> telefone = new ArrayList<>();
+    private List<Telefone> telefones = new ArrayList<>();
 
-    @Column(nullable = false)
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "cliente")
-    private Endereco endereco;
+    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE,CascadeType.PERSIST}, mappedBy = "cliente")
+    private Endereco endereco = new Endereco();
 
     @Column(name = "data_nascimento", nullable = false)
     private LocalDate dataNascimento;
 
     @Column(nullable = false, unique = true)
     private String email;
+
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Conta> contas = new ArrayList<>();
+    
+    private boolean ativo;
+    
+
+	public Cliente() {
+	}
 
     public Cliente(String nome, String cpf, Endereco endereco, LocalDate dataNascimento, String email, Telefone telefone) {
         this.nome = nome;
@@ -39,11 +48,18 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
         this.email = email;
         adicionarTelefone(telefone);
+        this.ativo = true;
     }
 
-    public Long getId() {
+    public List<Conta> getContas() {
+    	return contas;
+    }
+ 
+
+	public Long getId() {
         return id;
     }
+
 
     public String getNome() {
         return nome;
@@ -61,13 +77,18 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public List<Telefone> getTelefone() {
-        return telefone;
+    public List<Telefone> getTelefones() {
+        return telefones;
     }
 
-    public void adicionarTelefone(Telefone telefone) {
-        this.telefone.add(telefone);
+   public void adicionarTelefone(Telefone telefone) {
+        this.telefones.add(telefone);
+   }
+
+   public void setTelefone(Telefone telefone) {
+        this.telefones.add(telefone);
     }
+
 
     public Endereco getEndereco() {
         return endereco;
@@ -93,6 +114,16 @@ public class Cliente {
         this.email = email;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+	public boolean isAtivo() {
+		return ativo;
+	}
 
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+    
 }

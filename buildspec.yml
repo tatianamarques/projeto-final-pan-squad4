@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    build:
+      commands:
+        - echo "Fase de build começando ..."
+        - mvm clean install -DskipTests
+      post_build:
+        - echo "Pipeline sucesso."
