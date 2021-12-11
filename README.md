@@ -4,7 +4,7 @@
 
 
 ##  💻 Sobre o projeto
-API  Rest  do banco  BlueBank  que gerencia transações  bancárias e cadastrar clientes.
+API  Rest, do banco fictício BlueBank, que gerencia transações  bancárias e cadastra clientes.
 
 versão: 1.0
 
@@ -13,7 +13,7 @@ versão: 1.0
 Arion Mathias
       -     Éric Monné Fraga de Oliveira
       -     Ronald Corradi Costa
-      -    Tatiana Gomes Bezerra Marques
+      -     Tatiana Gomes Bezerra Marques
       -     William Francisco de Assis
 
 
