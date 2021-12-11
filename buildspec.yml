@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: 0.2
 phases:
   install:
@@ -8,4 +9,16 @@ phases:
         - echo "Fase de build começando ..."
         - mvm clean install -DskipTests
       post_build:
+=======
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    build:
+      commands:
+        - echo "Fase de build começando ..."
+        - mvm clean install -DskipTests
+      post_build:
+>>>>>>> bc3252ef937d2ca8b72da00b8748de61cd52bb9a
         - echo "Pipeline sucesso."
