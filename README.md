@@ -1,3 +1,8 @@
+<h1>
+ <img src="https://ik.imagekit.io/1nwyvlydc85r/LOGObluebank_PaFzdTA64.png?updatedAt=1639239398594">
+  </h1>
+
+
 ##  💻 Sobre o projeto
 API  Rest  do banco  BlueBank  que gerencia transações  bancárias e cadastrar clientes.
 
