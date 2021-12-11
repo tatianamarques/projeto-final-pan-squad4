@@ -1,6 +1,5 @@
 <h1 align="center">
- <img src="https://ik.imagekit.io/1nwyvlydc85r/LOGObluebank_PaFzdTA64.png?
-updatedAt=1639239398594">
+ <img src="https://ik.imagekit.io/1nwyvlydc85r/LOGObluebank_PaFzdTA64.png?updatedAt=1639239398594">
   </h1>
 
 
