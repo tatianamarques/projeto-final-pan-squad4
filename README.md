@@ -8,7 +8,7 @@ API  Rest, do banco fictício BlueBank, que gerencia transações  bancárias e 
 
 versão: 1.0
 
-##### Equipe S4 – turma 2 – Gama Academi.
+##### Equipe S4 – Turma 2 – Gama / PAN Academy.
 
 Arion Mathias
       -     Éric Monné Fraga de Oliveira
