@@ -10,7 +10,7 @@ Desafio final do curso da Gama Academy em parceria com Banco Pan.
 
 versão: 1.0
 
-#### Tecnologia implementadas
+#### Tecnologias implementadas
 
 - Scrum 
 - Spring Boot
@@ -48,54 +48,65 @@ versão: 1.0
  <td>Caminho</td>
  <td>Descrição</td>
  </tr>
+ 
  <tr> 
   <td> POST</td> 
   <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente</td>
    <td>Cadadstro do cliente</td>
    </tr>
+ 
   <tr>
  <td>GET</td>
  <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/id</td>
  <td>Buscar por Id</td>
  </tr>
+ 
  <tr>
  <td> GET</td>
  <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente</td>
  <td>Listar todos os clientes</td>
  </tr>
-   </table>
-  
-
-
-
-
-- Buscar todos os clientes (utilizando DTO para sua exibição e paginação melhorando o 
-desempenho da consulta);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente
-
-- Atualizar cliente (utilizando validação e DTO);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/id
-
-- Deletar cliente (utilizando cascade);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/id
-
-- Fazer a busca por CPF;
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/cpf
-
-
-- Fazer a busca de cliente inativos;
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/inativos
-
-
-- Salvar telefone;
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/telefone
-
-
-- Deletar telefone;
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/telefone/id
-
-
-
+ 
+ <tr>
+ <td>PUT</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/id</td>
+ <td>Atualizar cliente</td>
+ </tr>
+ 
+ <tr>
+ <td> DELETE</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/id</td>
+ <td>Deletar cliente</td>
+ </tr>
+ 
+ <tr>
+ <td>GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/cpf</td>
+ <td>Buscar por CPF</td>
+ </tr>
+ 
+ <tr>
+ <td>GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/inativos</td>
+ <td>Buscar de clientes inativos</td>
+ </tr>
+ 
+ 
+ <tr>
+ <td>POST</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/telefone</td>
+ <td>Salvar telefone</td>
+ </tr>
+ 
+ 
+  <tr>
+ <td>DELETE</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/telefone/id</td>
+ <td>Deletar telefone</td>
+ </tr>
+ 
+  </table>
+ 
 
   #### Agência-Controller
 
