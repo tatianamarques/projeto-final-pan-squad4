@@ -110,7 +110,7 @@ versão: 1.0
   #### Agência-Controller
   
   
-    <table border="1">
+<table border="1">
  <tr>
  <td> Método</td>
  <td>Caminho</td>
@@ -147,31 +147,8 @@ versão: 1.0
  <td>Atualizar agência</td>
  </tr>
  
- <tr>
- <td>GET</td>
- <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/cpf</td>
- <td>Buscar por CPF</td>
- </tr>
  
- <tr>
- <td>GET</td>
- <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/inativos</td>
- <td>Buscar de clientes inativos</td>
- </tr>
- 
- 
- <tr>
- <td>POST</td>
- <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/telefone</td>
- <td>Salvar telefone</td>
- </tr>
- 
- 
-  <tr>
- <td>DELETE</td>
- <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/telefone/id</td>
- <td>Deletar telefone</td>
- </tr>
+
  
   </table>
   
