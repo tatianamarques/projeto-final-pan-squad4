@@ -227,6 +227,31 @@ versão: 1.0
  <td>Transferência</td>
  </tr>
  
+ 
+   #### Amazon Simple Notification Services(SNS):
+ 
+ <table border="1">
+ <tr>
+ <td> Método</td>
+ <td>Caminho</td>
+ <td>Descrição</td>
+ </tr>
+ 
+ <tr> 
+  <td>GET</td> 
+  <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/addSubscription/email</td>
+   <td>Envio de email </td>
+   </tr>
+ 
+  <tr>
+ <td>GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/sendNotification"</td>
+ <td>Envio de notificação</td>
+ </tr>
+
+ 
+ 
+ 
   </table>
 
 
