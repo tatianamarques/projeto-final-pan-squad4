@@ -147,43 +147,83 @@ versão: 1.0
  <td>Atualizar agência</td>
  </tr>
  
- 
-
- 
   </table>
   
 
+ #### Conta-Controller
+ 
+ <table border="1">
+ <tr>
+ <td> Método</td>
+ <td>Caminho</td>
+ <td>Descrição</td>
+ </tr>
+ 
+ <tr> 
+  <td> POST</td> 
+  <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/conta</td>
+   <td>Cadadstro de conta</td>
+   </tr>
+ 
+  <tr>
+ <td>GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/conta/id</td>
+ <td>Buscar conta por Id</td>
+ </tr>
+ 
+ <tr>
+ <td> GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/contas</td>
+ <td>Listar todas as contas</td>
+ </tr>
+ 
+ <tr>
+ <td>GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/conta/transacao/id</td>
+ <td>Buscar historico de conta por id</td>
+ </tr>
+ 
+ <tr>
+ <td> PUT</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/id</td>
+ <td>Buscar histórico de conta por id</td>
+ </tr>
+ 
+  </table>
 
-
-
-  #### Conta-Controller
-
-- Cadastro de conta (utilizando validação);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/conta
-
-
-- Buscar por Id (utilizando DTO);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/conta/id
-
-
-- Busca histórico de conta por id (Utilizando DTO e paginação);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/conta/transacao/id
-
-- Buscar todas as contas (utilizando DTO e paginação);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/contas
 
 
   #### Transação-Controller
+  
+  
+   <table border="1">
+ <tr>
+ <td> Método</td>
+ <td>Caminho</td>
+ <td>Descrição</td>
+ </tr>
+ 
+ <tr> 
+  <td> POST</td> 
+  <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/transacao/depositar</td>
+   <td>Depositar</td>
+   </tr>
+ 
+  <tr>
+ <td>POST</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/transacao/sacar</td>
+ <td>Sacar</td>
+ </tr>
+ 
+ <tr>
+ <td> POST</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/transacao/transferencia</td>
+ <td>Transferência/td>
+ </tr>
+ 
+  </table>
 
 
-- Depositar
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/transacao/depositar
-
-- Sacar
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/transacao/sacar
-
-- Transferência
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/transacao/transferencia
 
 
 
