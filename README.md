@@ -228,7 +228,7 @@ versão: 1.0
  </tr>
  
  
-   #### Amazon Simple Notification Services(SNS):
+  
  
  <table border="1">
  <tr>
