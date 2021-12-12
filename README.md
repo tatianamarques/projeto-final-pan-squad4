@@ -218,7 +218,7 @@ versão: 1.0
  <tr>
  <td> POST</td>
  <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/transacao/transferencia</td>
- <td>Transferência/td>
+ <td>Transferência</td>
  </tr>
  
   </table>
