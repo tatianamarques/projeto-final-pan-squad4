@@ -84,9 +84,17 @@ INSERT INTO agencia (bairro,cep,cidade,complemento,logradouro,numero_endereco,uf
 INSERT INTO cliente (cpf,data_nascimento,email,nome,ativo) VALUES ('85953354002', '1979-03-25', 'jose@email.com', 'José da Silva Souza','true');
 INSERT INTO cliente (cpf,data_nascimento,email,nome,ativo) VALUES ('43491283019', '1984-09-11', 'ana@email.com', 'Ana Maria Braga','false');
 INSERT INTO cliente (cpf,data_nascimento,email,nome,ativo) VALUES ('41805146050', '1950-05-02', 'faustao@email.com', 'Fausto Correia da Silva','true');
+INSERT INTO cliente (cpf,data_nascimento,email,nome,ativo) VALUES ('87241323068', '1914-01-31', 'seugetulio@email.com', 'Fernanda Manuela Andrade','true');
+INSERT INTO cliente (cpf,data_nascimento,email,nome,ativo) VALUES ('70081263015', '1955-07-12', 'gigabyte@email.com', 'Quintino Silvestre','true');
+INSERT INTO cliente (cpf,data_nascimento,email,nome,ativo) VALUES ('63649966042', '1990-12-27', 'julieta@email.com', 'Julieta Sorín Laporta','true');
+INSERT INTO cliente (cpf,data_nascimento,email,nome,ativo) VALUES ('05879628019', '2001-02-19', 'juninho@email.com', 'Antônio Augusto Ribeiro Reis Júnior','true');
 INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Alvorada', '98762123', 'Viana', 'casa', 'Rua Esmeralda', '12', 'ES', '1');
 INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Morumbi', '12345789', 'São Paulo', 'apto 1001', 'Rua Independência', '167', 'SP', '2');
 INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Jardim Helena', '08090284', 'São Paulo', 'casa 13', 'Rua Selena', '155', 'SP', '3');
+INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Colubandê', '24200122', 'São Gonçalo', 'apto 13', 'Rua Estrela', '18', 'RJ', '4');
+INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Itapoã', '29202022', 'Vila Velha', 'apto 601', 'Rua Mortícia Addams', '02', 'ES', '5');
+INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Centro', '29020800', 'Guarapari', 'casa', 'Alameda dos Anjos', '78', 'ES', '6');
+INSERT INTO endereco (bairro,cep,cidade,complemento,logradouro,numero,uf,cliente_id) VALUES ('Parangaba', '61566000', 'Fortaleza', 'apto 122', 'Avenida Lilo Havaí', '185', 'CE', '7');
 
 INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('027', '111111111', 'CELULAR', '1');
 INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('027', '11112222', 'RESIDENCIAL', '1');
@@ -94,9 +102,19 @@ INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('011', '22
 INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('011', '22222222', 'RESIDENCIAL', '2');
 INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('011', '32222223', 'RESIDENCIAL', '3');
 INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('011', '922222299', 'CELULAR', '3');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('021', '32452223', 'RESIDENCIAL', '4');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('021', '924522299', 'CELULAR', '4');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('027', '32562223', 'RESIDENCIAL', '5');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('027', '925622299', 'CELULAR', '5');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('027', '32672223', 'RESIDENCIAL', '6');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('027', '926722299', 'CELULAR', '6');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('085', '32892223', 'RESIDENCIAL', '7');
+INSERT INTO telefone (ddd, numero, tipo_telefone, cliente_id) VALUES ('085', '929822299', 'CELULAR', '7');
 
 INSERT INTO conta (data_abertura, esta_bloqueada, numero, saldo, saldo_especial, senha, tipo_conta, agencia_id, cliente_id) VALUES ('2021-01-19', 0,'1111-1', 2500, 0,'1234','CORRENTE', 1, 1);
 INSERT INTO conta (data_abertura, esta_bloqueada, numero, saldo, saldo_especial, senha, tipo_conta,agencia_id, cliente_id) VALUES ('2020-07-03', 0,'2222-2', 1500, 0,'1234','POUPANCA', 1, 2);
 INSERT INTO conta (data_abertura, esta_bloqueada, numero, saldo, saldo_especial, senha, tipo_conta,agencia_id, cliente_id) VALUES ('2020-07-03', 0,'2233-2', 1500, 0,'1234','POUPANCA', 2, 3);
-
-
+INSERT INTO conta (data_abertura, esta_bloqueada, numero, saldo, saldo_especial, senha, tipo_conta,agencia_id, cliente_id) VALUES ('2021-07-13', 0,'2533-2', 2500, 0,'1234','POUPANCA', 33, 4);
+INSERT INTO conta (data_abertura, esta_bloqueada, numero, saldo, saldo_especial, senha, tipo_conta,agencia_id, cliente_id) VALUES ('2018-03-06', 0,'1243-1', 3500, 0,'1234','CORRENTE', 37, 5);
+INSERT INTO conta (data_abertura, esta_bloqueada, numero, saldo, saldo_especial, senha, tipo_conta,agencia_id, cliente_id) VALUES ('2019-08-20', 0,'2399-1', 4500, 0,'1234','CORRENTE', 38, 6);
+INSERT INTO conta (data_abertura, esta_bloqueada, numero, saldo, saldo_especial, senha, tipo_conta,agencia_id, cliente_id) VALUES ('2020-10-15', 0,'1845-2', 5550, 0,'1234','POUPANCA', 63, 7);
