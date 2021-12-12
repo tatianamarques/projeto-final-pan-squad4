@@ -5,6 +5,8 @@
 
 ##  💻 Sobre o projeto
 API  Rest  do banco  BlueBank  que gerencia transações  bancárias e cadastrar clientes.
+<br>
+Desafio final do curso da Gama Academy em parceria com Banco Pan.
 
 versão: 1.0
 
@@ -25,7 +27,7 @@ versão: 1.0
 
   <br> <br>
 
-##### Equipe S4 – turma 2 – Gama Academi.
+#### Equipe Desenvolvedores S4 – turma 2 – Gama Academi.
 
 Arion Mathias
       -     Éric Monné Fraga de Oliveira
