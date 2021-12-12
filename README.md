@@ -226,8 +226,9 @@ versão: 1.0
  <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/transacao/transferencia</td>
  <td>Transferência</td>
  </tr>
+  </table>
  
- 
+  #### Amazon Simples Notification Service(SNS):
   
  
  <table border="1">
