@@ -35,11 +35,11 @@ versão: 1.0
 
 ### Desenvolvedores - Equipe S4 – Turma 2 – Gama / PAN Academy.
 
- <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Arion Mathias</a>
- <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Éric Monné Fraga de Oliveira</a>
- <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Ronald Corradi Costa</a>
- <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Tatiana Gomes Bezerra Marques</a>
- <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">William Francisco de Assis</a
+ <p><a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Arion Mathias</a></p>
+ <p> <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Éric Monné Fraga de Oliveira</a></p>
+ <p><a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Ronald Corradi Costa</a></p>
+ <p><a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Tatiana Gomes Bezerra Marques</a></p>
+ <p><a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">William Francisco de Assis</a></p>
           
 
 ###  Contendo os seguintes  endpoints
