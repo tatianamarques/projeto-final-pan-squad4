@@ -108,25 +108,73 @@ versão: 1.0
  
 
   #### Agência-Controller
-
-- Cadastrar uma agência (utilizando validação);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/agencia
-
-
-- Buscar por Id (utilizando DTO);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/agencia/id
-
-
-- Buscar todas as agências (utilizando DTO e paginação);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/agencia/numero/numeroAgencia
-
-
-- Buscar agencia por número (utilizando DTO);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/agencia/lista
-
-
-- Atualizar agência (utilizando DTO e validação);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/agencia/id
+  
+  
+    <table border="1">
+ <tr>
+ <td> Método</td>
+ <td>Caminho</td>
+ <td>Descrição</td>
+ </tr>
+ 
+ <tr> 
+  <td> POST</td> 
+  <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/agencia</td>
+   <td>Cadadstro da agencia</td>
+   </tr>
+ 
+  <tr>
+ <td>GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/agencia/id</td>
+ <td>Buscar por Id</td>
+ </tr>
+ 
+ <tr>
+ <td> GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/agencia/lista</td>
+ <td>Listar todas as agencias</td>
+ </tr>
+ 
+ <tr>
+ <td>GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/agencia/numero/numeroAgencia</td>
+ <td>Buscar agencia por número</td>
+ </tr>
+ 
+ <tr>
+ <td> PUT</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/id</td>
+ <td>Atualizar agência</td>
+ </tr>
+ 
+ <tr>
+ <td>GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/cpf</td>
+ <td>Buscar por CPF</td>
+ </tr>
+ 
+ <tr>
+ <td>GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/inativos</td>
+ <td>Buscar de clientes inativos</td>
+ </tr>
+ 
+ 
+ <tr>
+ <td>POST</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/telefone</td>
+ <td>Salvar telefone</td>
+ </tr>
+ 
+ 
+  <tr>
+ <td>DELETE</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/telefone/id</td>
+ <td>Deletar telefone</td>
+ </tr>
+ 
+  </table>
+  
 
 
 
