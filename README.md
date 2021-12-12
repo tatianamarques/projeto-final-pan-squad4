@@ -19,6 +19,11 @@ versão: 1.0
 - Swagger para documentação
 - RDS para o banco de dados Mysql
 
+#### Diagrama de Entidade Relacionamento(DER):
+ 
+< img src=”https://ik.imagekit.io/1nwyvlydc85r/Diagrama_de_entidade_oX9goFyH_.png?updatedAt=1639317375093”>
+
+
 
 ##### Equipe S4 – turma 2 – Gama Academi.
 
