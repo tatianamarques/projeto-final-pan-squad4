@@ -42,31 +42,21 @@ versão: 1.0
 
   #### Cliente-Controller
   
-  <table border="1">
- 
- <tr>
-   <td> Método</td>
+  <table border="1"> <tr>
+ <td> Método</td>
+ <td>Caminho</td>
+ <td>Descrição</td>
+ </tr>
+ <tr> 
+  <td> POST</td> 
+  <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente</td>
   
-    <td>Caminho</td>
-  
-    <td>Descrição</>
-  
-  </tr>
-  
-  <tr>
-   <td> POST</td>
-  
-    <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente</td>
-  
-    <td>Cadastro do cliente</>
-  
-  </tr>
+    <td>Cadastro do cliente</td>
+    </tr>
+   </table>
   
   
-  </table>
-  
-  
-  <br> <br>
+
   
   
 - Cadastro do cliente (utilizando validação);
