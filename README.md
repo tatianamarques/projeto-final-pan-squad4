@@ -58,12 +58,15 @@ versão: 1.0
  <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/id</td>
  <td>Buscar por Id</td>
  </tr>
+ <tr>
+ <td> GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente</td>
+ <td>Listar todos os clientes</td>
+ </tr>
    </table>
   
 
-- Buscar por Id (utilizando DTO para proteção dos dados referente a sua exibição);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com
-/api/cliente/id
+
 
 
 - Buscar todos os clientes (utilizando DTO para sua exibição e paginação melhorando o 
