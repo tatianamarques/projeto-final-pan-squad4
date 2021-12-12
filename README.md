@@ -25,14 +25,14 @@ versão: 1.0
  
 <img src="https://ik.imagekit.io/1nwyvlydc85r/Diagrama_de_entidade_oX9goFyH_.png?updatedAt=1639317375093">
 
-  <br> <br>
+  
 
 ### Desenvolvedores - equipe S4 – turma 2 – Gama Academi.
 
       -     Arion Mathias
       -     Éric Monné Fraga de Oliveira
       -     Ronald Corradi Costa
-      -    Tatiana Gomes Bezerra Marques
+      -     Tatiana Gomes Bezerra Marques
       -     William Francisco de Assis
 
     <br> <br>
@@ -50,9 +50,8 @@ versão: 1.0
  <tr> 
   <td> POST</td> 
   <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente</td>
-  
-    <td>Cadastro do cliente</td>
-    </tr>
+   <td>Cadadstro do cliente</td>
+   </tr>
    </table>
   
   
