@@ -23,7 +23,7 @@ versão: 1.0
  
 <img src="https://ik.imagekit.io/1nwyvlydc85r/Diagrama_de_entidade_oX9goFyH_.png?updatedAt=1639317375093">
 
-
+  br br
 
 ##### Equipe S4 – turma 2 – Gama Academi.
 
