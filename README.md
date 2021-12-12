@@ -19,6 +19,12 @@ versão: 1.0
 - Lambda AWS
 - Swagger para documentação
 - RDS para o banco de dados Mysql
+- 
+
+### Acesso a documentação(Swagger):
+
+ - http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/swagger-ui.html#
+
 
 ### Diagrama de Entidade Relacionamento(DER):
  
