@@ -27,20 +27,47 @@ versão: 1.0
 
   <br> <br>
 
-#### Equipe Desenvolvedores S4 – turma 2 – Gama Academi.
+### Desenvolvedores - equipe S4 – turma 2 – Gama Academi.
 
-Arion Mathias
+      -     Arion Mathias
       -     Éric Monné Fraga de Oliveira
       -     Ronald Corradi Costa
       -    Tatiana Gomes Bezerra Marques
       -     William Francisco de Assis
 
-
+    <br> <br>
 
 ###  Contendo os seguintes  endpoints
 
 
   #### Cliente-Controller
+  
+  <table border="1">
+ 
+ <tr>
+   <td> Método</td>
+  
+    <td>Caminho</td>
+  
+    <td>Descrição</>
+  
+  </tr>
+  
+  <tr>
+   <td> POST</td>
+  
+    <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente</td>
+  
+    <td>Cadastro do cliente</>
+  
+  </tr>
+  
+  
+  </table>
+  
+  
+  <br> <br>
+  
   
 - Cadastro do cliente (utilizando validação);
 http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente
