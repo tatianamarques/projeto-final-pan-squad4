@@ -39,7 +39,7 @@ versão: 1.0
       -     Éric Monné Fraga de Oliveira
       -     Ronald Corradi Costa
       -     Tatiana Gomes Bezerra Marques
-      -     William Francisco de Assis
+      -    <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/"> William Francisco de Assis</a>
 
     
 
