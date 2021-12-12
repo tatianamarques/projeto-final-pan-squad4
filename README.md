@@ -34,17 +34,13 @@ versão: 1.0
   
 
 ### Desenvolvedores - Equipe S4 – Turma 2 – Gama / PAN Academy.
- <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">William Francisco de Assis</a>
 
-
-      -     Arion Mathias
-      -     Éric Monné Fraga de Oliveira
-      -     Ronald Corradi Costa
-      -     Tatiana Gomes Bezerra Marques
-      
-         
-
-    
+ <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Arion Mathias</a>
+ <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Éric Monné Fraga de Oliveira</a>
+ <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Ronald Corradi Costa</a>
+ <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">Tatiana Gomes Bezerra Marques</a>
+ <a href="https://www.linkedin.com/in/william-francisco-de-assis-ba13a071/">William Francisco de Assis</a
+          
 
 ###  Contendo os seguintes  endpoints
 
