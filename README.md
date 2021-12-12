@@ -4,14 +4,13 @@
 
 
 ##  💻 Sobre o projeto
-API  Rest  do banco  BlueBank  que gerencia transações  bancárias e cadastrar clientes.
+API  Rest, do banco fictício BlueBank,  que gerencia transações  bancárias e faz o CRUD de clientes.
 <br>
 Desafio final do curso da Gama Academy em parceria com Banco Pan.
 
 versão: 1.0
 
-#### Tecnologias implementadas
-
+#### Tecnologias utilizadas no trabalho.
 - Scrum 
 - Spring Boot
 - Git
@@ -27,7 +26,7 @@ versão: 1.0
 
   
 
-### Desenvolvedores - equipe S4 – turma 2 – Gama Academi.
+### Desenvolvedores - Equipe S4 – Turma 2 – Gama / PAN Academy.
 
       -     Arion Mathias
       -     Éric Monné Fraga de Oliveira
