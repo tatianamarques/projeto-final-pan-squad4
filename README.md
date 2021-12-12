@@ -35,14 +35,15 @@ versão: 1.0
       -     Tatiana Gomes Bezerra Marques
       -     William Francisco de Assis
 
-    <br> <br>
+    
 
 ###  Contendo os seguintes  endpoints
 
 
   #### Cliente-Controller
   
-  <table border="1"> <tr>
+  <table border="1">
+ <tr>
  <td> Método</td>
  <td>Caminho</td>
  <td>Descrição</td>
@@ -52,15 +53,13 @@ versão: 1.0
   <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente</td>
    <td>Cadadstro do cliente</td>
    </tr>
+  <tr>
+ <td>GET</td>
+ <td>http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente/id</td>
+ <td>Buscar por Id</td>
+ </tr>
    </table>
   
-  
-
-  
-  
-- Cadastro do cliente (utilizando validação);
-http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com/api/cliente
-
 
 - Buscar por Id (utilizando DTO para proteção dos dados referente a sua exibição);
 http://t2s4bluebankbeanstalk-env.eba-wzym39tx.us-east-2.elasticbeanstalk.com
